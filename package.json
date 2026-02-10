@@ -1,0 +1,13 @@
+{
+  "name": "cyve",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "figma:export": "node scripts/figma-export.js",
+    "figma:images": "node scripts/figma-export-images.js"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

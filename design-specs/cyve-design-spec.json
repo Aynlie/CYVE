@@ -1,0 +1,1500 @@
+{
+  "meta": {
+    "fileKey": "8ky6MAbD5F8TpcRhhxN6ul",
+    "nodeId": "48-12",
+    "fileName": "CYVE Wireframe",
+    "lastModified": "2026-02-10T09:49:36Z"
+  },
+  "structure": [
+    {
+      "id": "48:12",
+      "name": "Starting Page",
+      "type": "FRAME",
+      "depth": 0
+    },
+    {
+      "id": "52:31",
+      "name": "Group 7",
+      "type": "GROUP",
+      "depth": 1
+    },
+    {
+      "id": "52:32",
+      "name": "Rectangle 14",
+      "type": "RECTANGLE",
+      "depth": 2
+    },
+    {
+      "id": "52:42",
+      "name": "Ellipse 2",
+      "type": "ELLIPSE",
+      "depth": 1
+    },
+    {
+      "id": "52:40",
+      "name": "Login/ Sign Up",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "52:13",
+      "name": "Polygon 1",
+      "type": "REGULAR_POLYGON",
+      "depth": 1
+    },
+    {
+      "id": "52:14",
+      "name": "build, your, future",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "54:46",
+      "name": "SEARCH BAR",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "54:47",
+      "name": "SEARCH",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "54:57",
+      "name": "CREATE. CONNECT. PROTECT.",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "54:59",
+      "name": "Your Roadmap Starts Here",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "54:60",
+      "name": "Cybersecurity is one of the most in-demand and impactful careers in today’s digital world. Whether you’re a student, career shifter, or tech enthusiast, our platform provides clear, step-by-step roadmaps to help you navigate your journey into the field of cybersecurity.",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "62:6",
+      "name": "tempImageN0l1Kc 1",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "62:7",
+      "name": "tempImageN0l1Kc 2",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "62:9",
+      "name": "Red Team",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "62:10",
+      "name": "Offensive Security",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "77:107",
+      "name": "UniQ",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "80:2",
+      "name": "Rectangle 60",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "80:3",
+      "name": "Rectangle 61",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "80:5",
+      "name": "Rectangle 62",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "81:2",
+      "name": "Rectangle 63",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "81:4",
+      "name": "Picture of Roadmap",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "81:7",
+      "name": "Picture of Map",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "81:9",
+      "name": "Picture of Note Capability",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "81:5",
+      "name": "Picture of Calendar",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "81:11",
+      "name": "Polygon 2",
+      "type": "REGULAR_POLYGON",
+      "depth": 1
+    },
+    {
+      "id": "83:103",
+      "name": "transp 1",
+      "type": "FRAME",
+      "depth": 1
+    },
+    {
+      "id": "83:115",
+      "name": "Clip path group",
+      "type": "GROUP",
+      "depth": 2
+    },
+    {
+      "id": "83:113",
+      "name": "5f97b8fbd7",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "83:114",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "83:104",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "83:112",
+      "name": "Mask group",
+      "type": "GROUP",
+      "depth": 4
+    },
+    {
+      "id": "83:108",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 5
+    },
+    {
+      "id": "83:109",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 6
+    },
+    {
+      "id": "83:110",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 7
+    },
+    {
+      "id": "83:111",
+      "name": "Rectangle",
+      "type": "RECTANGLE",
+      "depth": 8
+    },
+    {
+      "id": "83:105",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 5
+    },
+    {
+      "id": "83:106",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 6
+    },
+    {
+      "id": "83:107",
+      "name": "Rectangle",
+      "type": "RECTANGLE",
+      "depth": 7
+    },
+    {
+      "id": "86:32",
+      "name": "Rectangle 7",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "86:33",
+      "name": "Home",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:34",
+      "name": "League",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:35",
+      "name": "Calendar",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:36",
+      "name": "Roadmap",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:37",
+      "name": "About",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:301",
+      "name": "C",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:302",
+      "name": "Y",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:303",
+      "name": "V",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:304",
+      "name": "E",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:305",
+      "name": "2026 CYVE. All Rights Reserved",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:306",
+      "name": "+63 000 000 0000",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:307",
+      "name": "Angeles City",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:308",
+      "name": "Roadmap",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:309",
+      "name": "Calendar",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:310",
+      "name": "Recommendation",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:311",
+      "name": "Contact Us",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:312",
+      "name": "Follow Us",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:313",
+      "name": "+63 000 000 0000",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:314",
+      "name": "Angeles City",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "86:315",
+      "name": "Line 69",
+      "type": "LINE",
+      "depth": 1
+    },
+    {
+      "id": "86:316",
+      "name": "Group 9",
+      "type": "GROUP",
+      "depth": 1
+    },
+    {
+      "id": "86:317",
+      "name": "Rectangle 14",
+      "type": "RECTANGLE",
+      "depth": 2
+    },
+    {
+      "id": "86:318",
+      "name": "loc 1",
+      "type": "FRAME",
+      "depth": 1
+    },
+    {
+      "id": "86:319",
+      "name": "Clip path group",
+      "type": "GROUP",
+      "depth": 2
+    },
+    {
+      "id": "86:320",
+      "name": "16df7df105",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:321",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:322",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:323",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:324",
+      "name": "loc 2",
+      "type": "FRAME",
+      "depth": 1
+    },
+    {
+      "id": "86:325",
+      "name": "Clip path group",
+      "type": "GROUP",
+      "depth": 2
+    },
+    {
+      "id": "86:326",
+      "name": "16df7df105",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:327",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:328",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:329",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:330",
+      "name": "phone 1",
+      "type": "FRAME",
+      "depth": 1
+    },
+    {
+      "id": "86:331",
+      "name": "Clip path group",
+      "type": "GROUP",
+      "depth": 2
+    },
+    {
+      "id": "86:332",
+      "name": "d0eb2ae534",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:333",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:334",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:335",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:336",
+      "name": "phone 2",
+      "type": "FRAME",
+      "depth": 1
+    },
+    {
+      "id": "86:337",
+      "name": "Clip path group",
+      "type": "GROUP",
+      "depth": 2
+    },
+    {
+      "id": "86:338",
+      "name": "d0eb2ae534",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:339",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "86:340",
+      "name": "Group",
+      "type": "GROUP",
+      "depth": 3
+    },
+    {
+      "id": "86:341",
+      "name": "Vector",
+      "type": "VECTOR",
+      "depth": 4
+    },
+    {
+      "id": "128:8",
+      "name": "C",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "128:9",
+      "name": "Y",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "128:10",
+      "name": "V",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "128:11",
+      "name": "E",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "67:13",
+      "name": "tempImageKL4llc 1",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "67:16",
+      "name": "Blue Team",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "67:17",
+      "name": "Deffensive Security",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "67:14",
+      "name": "tempImageKL4llc 2",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "67:19",
+      "name": "tempImageKAHcqU 1",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "67:20",
+      "name": "tempImageKAHcqU 2",
+      "type": "RECTANGLE",
+      "depth": 1
+    },
+    {
+      "id": "67:22",
+      "name": "Purple Team",
+      "type": "TEXT",
+      "depth": 1
+    },
+    {
+      "id": "67:23",
+      "name": "Collaboration & Optimization",
+      "type": "TEXT",
+      "depth": 1
+    }
+  ],
+  "colors": {
+    "#000000": {
+      "usedIn": [
+        "Starting Page",
+        "Rectangle 14",
+        "Login/ Sign Up",
+        "SEARCH BAR",
+        "SEARCH",
+        "Picture of Roadmap",
+        "Picture of Map",
+        "Picture of Note Capability",
+        "Picture of Calendar",
+        "Vector"
+      ]
+    },
+    "#f5be1e": {
+      "usedIn": [
+        "Ellipse 2",
+        "Polygon 1",
+        "UniQ",
+        "Rectangle 60",
+        "Rectangle 61",
+        "Rectangle 62",
+        "Rectangle 63",
+        "Polygon 2",
+        "Rectangle 7",
+        "Vector",
+        "C",
+        "Y",
+        "V",
+        "E"
+      ]
+    },
+    "#ffffff": {
+      "usedIn": [
+        "build, your, future",
+        "SEARCH BAR",
+        "CREATE. CONNECT. PROTECT.",
+        "Your Roadmap Starts Here",
+        "Cybersecurity is one of the most in-demand and impactful careers in today’s digital world. Whether you’re a student, career shifter, or tech enthusiast, our platform provides clear, step-by-step roadmaps to help you navigate your journey into the field of cybersecurity.",
+        "Red Team",
+        "Offensive Security",
+        "transp 1",
+        "Home",
+        "League",
+        "Calendar",
+        "Roadmap",
+        "About",
+        "C",
+        "Y",
+        "V",
+        "E",
+        "2026 CYVE. All Rights Reserved",
+        "+63 000 000 0000",
+        "Angeles City",
+        "Recommendation",
+        "Contact Us",
+        "Follow Us",
+        "Line 69",
+        "loc 1",
+        "loc 2",
+        "phone 1",
+        "phone 2",
+        "Blue Team",
+        "Deffensive Security",
+        "Purple Team",
+        "Collaboration & Optimization"
+      ]
+    }
+  },
+  "typography": [
+    {
+      "name": "Login/ Sign Up",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 30,
+      "lineHeightPx": 36.30681610107422,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "build, your, future",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 64,
+      "lineHeightPx": 77.45454406738281,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "Angeles City",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 24,
+      "lineHeightPx": 29.045454025268555,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "LEFT"
+    },
+    {
+      "name": "CREATE. CONNECT. PROTECT.",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 32,
+      "lineHeightPx": 38.727272033691406,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "Your Roadmap Starts Here",
+      "fontFamily": "Inter",
+      "fontWeight": 700,
+      "fontSize": 32,
+      "lineHeightPx": 38.727272033691406,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "RIGHT"
+    },
+    {
+      "name": "Collaboration & Optimization",
+      "fontFamily": "Inter",
+      "fontWeight": 700,
+      "fontSize": 24,
+      "lineHeightPx": 29.045454025268555,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "UniQ",
+      "fontFamily": "Inter",
+      "fontWeight": 700,
+      "fontSize": 128,
+      "lineHeightPx": 154.90908813476562,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "Picture of Calendar",
+      "fontFamily": "Inter",
+      "fontWeight": 700,
+      "fontSize": 36,
+      "lineHeightPx": 43.568180084228516,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "About",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 40,
+      "lineHeightPx": 48.409088134765625,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "CENTER"
+    },
+    {
+      "name": "E",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 96,
+      "lineHeightPx": 116.18181610107422,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "LEFT"
+    },
+    {
+      "name": "C",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 160,
+      "lineHeightPx": 193.6363525390625,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "LEFT"
+    },
+    {
+      "name": "E",
+      "fontFamily": "Inter",
+      "fontWeight": 400,
+      "fontSize": 150,
+      "lineHeightPx": 181.53408813476562,
+      "letterSpacing": 0,
+      "textAlignHorizontal": "LEFT"
+    }
+  ],
+  "layouts": [
+    {
+      "name": "Starting Page",
+      "type": "FRAME",
+      "depth": 0,
+      "x": -2412,
+      "y": 153,
+      "width": 1512,
+      "height": 6586,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 14",
+      "type": "RECTANGLE",
+      "depth": 2,
+      "x": -2396,
+      "y": 153,
+      "width": 192,
+      "height": 179,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Login/ Sign Up",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1135,
+      "y": 207,
+      "width": 190,
+      "height": 69,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "build, your, future",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2168,
+      "y": 1140,
+      "width": 184,
+      "height": 206,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "SEARCH BAR",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2105,
+      "y": 675,
+      "width": 899,
+      "height": 107,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "SEARCH",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1989,
+      "y": 718,
+      "width": 104,
+      "height": 21,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "CREATE. CONNECT. PROTECT.",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1902,
+      "y": 795,
+      "width": 492,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Your Roadmap Starts Here",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1486,
+      "y": 1378,
+      "width": 458,
+      "height": 38,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Cybersecurity is one of the most in-demand and impactful careers in today’s digital world. Whether you’re a student, career shifter, or tech enthusiast, our platform provides clear, step-by-step roadmaps to help you navigate your journey into the field of cybersecurity.",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1686,
+      "y": 1436,
+      "width": 658,
+      "height": 210,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "tempImageN0l1Kc 1",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2412,
+      "y": 1770,
+      "width": 1511,
+      "height": 1007,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "tempImageN0l1Kc 2",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2012,
+      "y": 2037,
+      "width": 711,
+      "height": 474,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Red Team",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2183,
+      "y": 2274,
+      "width": 116,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Offensive Security",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1262,
+      "y": 2274,
+      "width": 219,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "UniQ",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1627,
+      "y": 5208,
+      "width": 474,
+      "height": 134,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 60",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2226,
+      "y": 5313,
+      "width": 576,
+      "height": 393,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 61",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -1694,
+      "y": 5758,
+      "width": 608,
+      "height": 381,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 62",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2172,
+      "y": 5746,
+      "width": 430,
+      "height": 304,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 63",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -1605,
+      "y": 5385,
+      "width": 430,
+      "height": 304,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Picture of Roadmap",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2204,
+      "y": 5479,
+      "width": 532,
+      "height": 62,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Picture of Map",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1664,
+      "y": 5510,
+      "width": 532,
+      "height": 62,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Picture of Note Capability",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2226,
+      "y": 5867,
+      "width": 532,
+      "height": 62,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Picture of Calendar",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1642,
+      "y": 6615,
+      "width": 532,
+      "height": 62,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "transp 1",
+      "type": "FRAME",
+      "depth": 1,
+      "x": -2124,
+      "y": 595,
+      "width": 197,
+      "height": 287,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 7",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2127,
+      "y": 207,
+      "width": 142,
+      "height": 70,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Home",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2127,
+      "y": 208,
+      "width": 142,
+      "height": 69,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "League",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1619,
+      "y": 209,
+      "width": 353,
+      "height": 69,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Calendar",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1751,
+      "y": 208,
+      "width": 213,
+      "height": 68,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Roadmap",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1970,
+      "y": 205,
+      "width": 213,
+      "height": 68,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "About",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1337,
+      "y": 209,
+      "width": 142,
+      "height": 69,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "C",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2150,
+      "y": 6201,
+      "width": 108,
+      "height": 124,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Y",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2060,
+      "y": 6201,
+      "width": 103,
+      "height": 141,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "V",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1976,
+      "y": 6201,
+      "width": 104,
+      "height": 147,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "E",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1904,
+      "y": 6198,
+      "width": 92,
+      "height": 145,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "2026 CYVE. All Rights Reserved",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1762,
+      "y": 6545,
+      "width": 362,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "+63 000 000 0000",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2196,
+      "y": 6382,
+      "width": 217,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Angeles City",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2194,
+      "y": 6449,
+      "width": 144,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Roadmap",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1429,
+      "y": 6371,
+      "width": 107,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Calendar",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1429,
+      "y": 6418,
+      "width": 103,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Recommendation",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1429,
+      "y": 6458,
+      "width": 198,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Contact Us",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1145,
+      "y": 6373,
+      "width": 128,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Follow Us",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1145,
+      "y": 6420,
+      "width": 110,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "+63 000 000 0000",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1802,
+      "y": 6382,
+      "width": 217,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Angeles City",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1800,
+      "y": 6449,
+      "width": 144,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Rectangle 14",
+      "type": "RECTANGLE",
+      "depth": 2,
+      "x": -2326,
+      "y": 6180,
+      "width": 170,
+      "height": 163,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "loc 1",
+      "type": "FRAME",
+      "depth": 1,
+      "x": -2260,
+      "y": 6409,
+      "width": 66,
+      "height": 93,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "loc 2",
+      "type": "FRAME",
+      "depth": 1,
+      "x": -1861,
+      "y": 6409,
+      "width": 66,
+      "height": 93,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "phone 1",
+      "type": "FRAME",
+      "depth": 1,
+      "x": -2261,
+      "y": 6354,
+      "width": 68,
+      "height": 95,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "phone 2",
+      "type": "FRAME",
+      "depth": 1,
+      "x": -1863,
+      "y": 6349,
+      "width": 68,
+      "height": 95,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "C",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1896,
+      "y": 501.0000093206763,
+      "width": 108.97139639407396,
+      "height": 124.84513065963984,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Y",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1764.933349609375,
+      "y": 509.009283689782,
+      "width": 104.1051832344383,
+      "height": 141.80530211515725,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "V",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1637.945068359375,
+      "y": 507.0031319409609,
+      "width": 105.15231675840914,
+      "height": 147.81297759711742,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "E",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1509.941162109375,
+      "y": 507.0912656709552,
+      "width": 93.13696579448879,
+      "height": 145.71871054917574,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "tempImageKL4llc 1",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2470,
+      "y": 2913,
+      "width": 1770,
+      "height": 995,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Blue Team",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2113,
+      "y": 3396,
+      "width": 122,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Deffensive Security",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1196,
+      "y": 3396,
+      "width": 232,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "tempImageKL4llc 2",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -1933,
+      "y": 3180,
+      "width": 697,
+      "height": 461,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "tempImageKAHcqU 1",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2465,
+      "y": 4068,
+      "width": 1618,
+      "height": 1022,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "tempImageKAHcqU 2",
+      "type": "RECTANGLE",
+      "depth": 1,
+      "x": -2008,
+      "y": 4356,
+      "width": 705,
+      "height": 445,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Purple Team",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -2192,
+      "y": 4594,
+      "width": 147,
+      "height": 29,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    },
+    {
+      "name": "Collaboration & Optimization",
+      "type": "TEXT",
+      "depth": 1,
+      "x": -1266,
+      "y": 4571,
+      "width": 186,
+      "height": 58,
+      "layoutMode": null,
+      "itemSpacing": null,
+      "padding": null
+    }
+  ]
+}

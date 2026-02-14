@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useAuth } from '@/context/AuthContext';
 import { useRoadmap } from '@/context/RoadmapContext';
 import { useCalendar } from '@/context/CalendarContext';
+import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import {
     RoadmapIcon,
@@ -17,6 +18,66 @@ import {
     NoteIcon,
     MapPinIcon
 } from '@/components/Icons';
+
+// Career Path Database
+const careerDatabase = [
+    {
+        title: "Penetration Tester",
+        team: "Red Team",
+        description: "Focuses on identifying and exploiting vulnerabilities in systems, networks, and applications to help organizations improve their security posture.",
+        skills: ["Ethical Hacking", "Python/Bash Scripting", "Network Security", "Metasploit", "Web App Security"],
+        certs: ["OSCP", "CEH", "GPEN", "eJPT"],
+        learningPath: "Learn networking basics -> Master Linux & Scripting -> Study common vulnerabilities (OWASP) -> Get OSCP certification."
+    },
+    {
+        title: "Ethical Hacker",
+        team: "Red Team",
+        description: "Uses the same techniques as malicious hackers to find and patch security holes, working legally to protect organizations.",
+        skills: ["Vulnerability Assessment", "Cryptography", "Reverse Engineering", "Social Engineering"],
+        certs: ["CEH", "CompTIA PenTest+", "GIAC Technical Certs"],
+        learningPath: "Start with CompTIA Security+ -> Learn penetration testing methodologies -> Practice on platforms like TryHackMe/HackTheBox."
+    },
+    {
+        title: "SOC Analyst",
+        team: "Blue Team",
+        description: "Monitors organization's infrastructure to detect and respond to cybersecurity threats in real-time.",
+        skills: ["SIEM (Splunk/ELK)", "Incident Response", "Log Analysis", "Threat Detection", "Traffic Analysis"],
+        certs: ["CySA+", "GCIH", "BTL1"],
+        learningPath: "Understand TCP/IP and networking -> Learn SIEM tools -> Study incident response frameworks -> Achieve CySA+."
+    },
+    {
+        title: "Security Analyst",
+        team: "Blue Team",
+        description: "Analyzes security policies and technical controls to ensure an organization remains secure and compliant with standards.",
+        skills: ["Risk Management", "Compliance Standards", "Firewall Management", "IAM", "Data Protection"],
+        certs: ["CompTIA Security+", "SSCP", "GSEC"],
+        learningPath: "Build strong IT foundation -> Master Security+ topics -> Specialize in Governance/Risk/Compliance or Technical analysis."
+    },
+    {
+        title: "Digital Forensics",
+        team: "Blue Team",
+        description: "Investigates digital evidence after a security breach to understand the 'how' and 'who' behind a cybercrime.",
+        skills: ["Evidence Collection", "File System Analysis", "Memory Forensics", "Malware Analysis", "Chain of Custody"],
+        certs: ["GCFE", "GCFA", "CHFI", "EnCE"],
+        learningPath: "Learn computer hardware & file systems -> Study forensic tools (Autopsy/FTK) -> Understand legal procedures for digital evidence."
+    },
+    {
+        title: "Threat Intelligence Analyst",
+        team: "Purple Team",
+        description: "Gathers and analyzes information about current and emerging cyber threats to help organizations proactively defend themselves.",
+        skills: ["OSINT", "Dark Web Monitoring", "Threat Modeling", "Indicators of Compromise (IoCs)", "Data Analysis"],
+        certs: ["GCTI", "CTIA"],
+        learningPath: "Learn about the cyber threat landscape -> Master OSINT techniques -> Study the Diamond Model and Lockheed Martin Kill Chain."
+    },
+    {
+        title: "Cloud Security Specialist",
+        team: "Blue/Purple Team",
+        description: "Focuses on securing cloud infrastructure and services (AWS, Azure, GCP) from threats and misconfigurations.",
+        skills: ["Cloud Architecture", "Identity & Access Management (IAM)", "DevSecOps", "Cloud Compliance", "Serverless Security"],
+        certs: ["CCSP", "AWS Certified Security Specialty", "Azure Security Engineer"],
+        learningPath: "Get a baseline cloud certification (Cloud Practitioner) -> Learn cloud-native security tools -> Implement DevSecOps pipelines."
+    }
+];
 
 export default function Home() {
     const { isAuthenticated, user } = useAuth();
@@ -31,110 +92,207 @@ export default function Home() {
 }
 
 function LoggedOutHome() {
+    const [searchQuery, setSearchQuery] = useState('');
+    const [suggestions, setSuggestions] = useState<typeof careerDatabase>([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const [selectedCareer, setSelectedCareer] = useState<typeof careerDatabase[0] | null>(null);
+
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const query = e.target.value.toLowerCase().trim();
+        setSearchQuery(e.target.value);
+
+        if (query.length > 0) {
+            const matches = careerDatabase.filter(career =>
+                career.title.toLowerCase().includes(query) ||
+                career.team.toLowerCase().includes(query)
+            );
+            setSuggestions(matches);
+            setShowSuggestions(matches.length > 0);
+        } else {
+            setSuggestions([]);
+            setShowSuggestions(false);
+        }
+    };
+
+    const handleSuggestionClick = (career: typeof careerDatabase[0]) => {
+        setSelectedCareer(career);
+        setSearchQuery(career.title);
+        setShowSuggestions(false);
+    };
+
+    const handleCloseDetails = () => {
+        setSelectedCareer(null);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            const target = e.target as HTMLElement;
+            if (!target.closest('.search-container')) {
+                setShowSuggestions(false);
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, []);
+
     return (
         <div className={styles.page}>
-            {/* Hero Section - Figma order: search, tagline, title, subtitle, description */}
+            {/* Hero Section - matching index.html design */}
             <section className={styles.hero}>
-                <div className={styles.heroContent}>
-                    <div className={styles.searchArea}>
-                        <div className={styles.searchBar}>
-                            <span className={styles.searchPlaceholder}>SEARCH</span>
+                <div className={styles.heroMainTitle}>CYVE</div>
+                <div className={`${styles.searchContainer} search-container`}>
+                    <div className={styles.searchBar}>
+                        <input 
+                            type="text" 
+                            className={styles.searchInput} 
+                            placeholder="Search for cybersecurity pathways..." 
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                        />
+                    </div>
+                    {showSuggestions && (
+                        <div className={styles.searchSuggestions}>
+                            {suggestions.map((career, index) => (
+                                <div 
+                                    key={index}
+                                    className="suggestion-item"
+                                    onClick={() => handleSuggestionClick(career)}
+                                    style={{
+                                        padding: '1rem',
+                                        cursor: 'pointer',
+                                        borderBottom: '1px solid #eee',
+                                        color: '#000'
+                                    }}
+                                >
+                                    {career.title} ({career.team})
+                                </div>
+                            ))}
                         </div>
-                        <p className={styles.tagline}>CREATE. CONNECT. PROTECT.</p>
+                    )}
+                    <p className={styles.tagline}>CREATE. CONNECT. PROTECT.</p>
+                </div>
+
+                {/* Career Details Section */}
+                {selectedCareer && (
+                    <div className="career-details-section" style={{
+                        background: 'rgba(255, 255, 255, 0.95)',
+                        color: '#000',
+                        padding: '2rem',
+                        borderRadius: '8px',
+                        margin: '2rem auto',
+                        maxWidth: '800px',
+                        position: 'relative'
+                    }}>
+                        <button 
+                            onClick={handleCloseDetails}
+                            style={{
+                                position: 'absolute',
+                                top: '1rem',
+                                right: '1rem',
+                                background: 'none',
+                                border: 'none',
+                                fontSize: '1.5rem',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            ×
+                        </button>
+                        <h2 style={{ marginBottom: '1.5rem' }}>{selectedCareer.title}</h2>
+                        <div style={{ display: 'grid', gap: '1.5rem' }}>
+                            <div>
+                                <h3>Description</h3>
+                                <p>{selectedCareer.description}</p>
+                            </div>
+                            <div>
+                                <h3>Required Skills</h3>
+                                <ul>
+                                    {selectedCareer.skills.map((skill, index) => (
+                                        <li key={index}>{skill}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>Suggested Certifications</h3>
+                                <ul>
+                                    {selectedCareer.certs.map((cert, index) => (
+                                        <li key={index}>{cert}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <h3>Recommended Learning Path</h3>
+                                <p>{selectedCareer.learningPath}</p>
+                            </div>
+                        </div>
                     </div>
-                    <h1 className={styles.heroTitle}>build, your, future</h1>
-                    <p className={styles.heroSubtitle}>Your Roadmap Starts Here</p>
-                    <p className={styles.heroDescription}>
-                        Cybersecurity is one of the most in-demand and impactful careers in today&apos;s digital world.
-                        Whether you&apos;re a student, career shifter, or tech enthusiast, our platform provides clear,
-                        step-by-step roadmaps to help you navigate your journey into the field of cybersecurity.
+                )}
+            </section>
+
+            {/* Sub-Hero Section */}
+            <section className={styles.subHero}>
+                <div className={styles.subHeroLeft}>
+                    <div className={styles.triangleGraphic}></div>
+                    <div className={styles.buildText}>
+                        <span>build,</span>
+                        <span>your,</span>
+                        <span>future</span>
+                    </div>
+                </div>
+                <div className={styles.subHeroRight}>
+                    <h2 className={styles.subHeroTitle}>Your Roadmap Starts Here</h2>
+                    <p className={styles.subHeroDescription}>
+                        Cybersecurity is one of the most in-demand and impactful careers in today&apos;s digital world. Whether you&apos;re a
+                        student, career shifter, or tech enthusiast, our platform provides clear, step-by-step roadmaps to help you
+                        navigate your journey into the field of cybersecurity.
                     </p>
-                    <div className={styles.ctaButtons}>
-                        <Link href="/signup" className="btn btn-primary btn-large">
-                            Get Started Free
-                        </Link>
-                        <Link href="/league" className="btn btn-secondary btn-large">
-                            Explore Teams
-                        </Link>
-                    </div>
                 </div>
             </section>
 
-            {/* Red Team Section - Figma: tempImageN0l1Kc, labels Red Team / Offensive Security */}
-            <section className={styles.teamSection}>
-                <Link href="/league/red-team" className={styles.teamLink}>
-                    <div className={styles.teamImageWrapper}>
-                        <div className={styles.teamImageMain} aria-hidden />
-                        <div className={styles.teamImageCard}>
-                            <span className={styles.teamImagePlaceholder}>Red Team</span>
+            {/* Team Sections */}
+            <section className={styles.teamSections}>
+                {/* Red Team */}
+                <div className={styles.teamCard}>
+                    <Link href="/league/red-team" className={styles.teamLink}>
+                        <div className={styles.teamContent}>
+                            <div className={styles.teamFocalWrapper}>
+                                <span className={styles.teamFocalImg}>Red Team</span>
+                            </div>
+                            <div className={styles.teamLabels}>
+                                <span className={styles.teamLabelLeft}>Red Team</span>
+                                <span className={styles.teamLabelRight}>Offensive Security</span>
+                            </div>
                         </div>
-                        <div className={styles.teamLabels}>
-                            <span className={styles.teamLabelLeft}>Red Team</span>
-                            <span className={styles.teamLabelRight}>Offensive Security</span>
-                        </div>
-                    </div>
-                </Link>
-            </section>
-
-            {/* Blue Team Section */}
-            <section className={styles.teamSection}>
-                <Link href="/league/blue-team" className={styles.teamLink}>
-                    <div className={styles.teamImageWrapper}>
-                        <div className={`${styles.teamImageMain} ${styles.teamBlue}`} aria-hidden />
-                        <div className={styles.teamImageCard}>
-                            <span className={styles.teamImagePlaceholder}>Blue Team</span>
-                        </div>
-                        <div className={styles.teamLabels}>
-                            <span className={styles.teamLabelLeft}>Blue Team</span>
-                            <span className={styles.teamLabelRight}>Deffensive Security</span>
-                        </div>
-                    </div>
-                </Link>
-            </section>
-
-            {/* Purple Team Section */}
-            <section className={styles.teamSection}>
-                <Link href="/league/purple-team" className={styles.teamLink}>
-                    <div className={styles.teamImageWrapper}>
-                        <div className={`${styles.teamImageMain} ${styles.teamPurple}`} aria-hidden />
-                        <div className={styles.teamImageCard}>
-                            <span className={styles.teamImagePlaceholder}>Purple Team</span>
-                        </div>
-                        <div className={styles.teamLabels}>
-                            <span className={styles.teamLabelLeft}>Purple Team</span>
-                            <span className={styles.teamLabelRight}>Collaboration & Optimization</span>
-                        </div>
-                    </div>
-                </Link>
-            </section>
-
-            {/* UniQ Section - Figma: 128px title, 4 gold rectangles with Picture of Roadmap/Map/Note/Calendar */}
-            <section className={styles.featuresSection}>
-                <h2 className={styles.sectionTitle}>UniQ</h2>
-                <div className={styles.featureGrid}>
-                    <Link href="/roadmap" className={styles.featureCard}>
-                        <div className={styles.featureIconWrapper}>
-                            <RoadmapIcon width={80} height={80} color="#000000" />
-                        </div>
-                        <h3 className={styles.featureCardTitle}>Picture of Roadmap</h3>
                     </Link>
-                    <Link href="/league" className={styles.featureCard}>
-                        <div className={styles.featureIconWrapper}>
-                            <MapPinIcon width={80} height={80} color="#000000" />
+                </div>
+
+                {/* Blue Team */}
+                <div className={styles.teamCard}>
+                    <Link href="/league/blue-team" className={styles.teamLink}>
+                        <div className={styles.teamContent}>
+                            <div className={styles.teamFocalWrapper}>
+                                <span className={styles.teamFocalImg}>Blue Team</span>
+                            </div>
+                            <div className={styles.teamLabels}>
+                                <span className={styles.teamLabelLeft}>Blue Team</span>
+                                <span className={styles.teamLabelRight}>Defensive Security</span>
+                            </div>
                         </div>
-                        <h3 className={styles.featureCardTitle}>Picture of Map</h3>
                     </Link>
-                    <Link href="/roadmap" className={styles.featureCard}>
-                        <div className={styles.featureIconWrapper}>
-                            <NoteIcon width={80} height={80} color="#000000" />
+                </div>
+
+                {/* Purple Team */}
+                <div className={styles.teamCard}>
+                    <Link href="/league/purple-team" className={styles.teamLink}>
+                        <div className={styles.teamContent}>
+                            <div className={styles.teamFocalWrapper}>
+                                <span className={styles.teamFocalImg}>Purple Team</span>
+                            </div>
+                            <div className={styles.teamLabels}>
+                                <span className={styles.teamLabelLeft}>Purple Team</span>
+                                <span className={styles.teamLabelRight}>Collaboration & Optimization</span>
+                            </div>
                         </div>
-                        <h3 className={styles.featureCardTitle}>Picture of Note Capability</h3>
-                    </Link>
-                    <Link href="/calendar" className={styles.featureCard}>
-                        <div className={styles.featureIconWrapper}>
-                            <CalendarIcon width={80} height={80} color="#000000" />
-                        </div>
-                        <h3 className={styles.featureCardTitle}>Picture of Calendar</h3>
                     </Link>
                 </div>
             </section>

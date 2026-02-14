@@ -1,102 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYVE - Paths for Cybersecurity</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <!-- Navigation -->
   <nav class="navigation">
-    <a href="#" class="logo">CYVE</a>
+    <div class="nav-left">
+      <a href="#" class="logo">
+        <img src="frontend/design-specs/images/52_31.png" alt="CYVE Logo" class="logo-img">
+        <span class="logo-text"></span>
+      </a>
+    </div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#calendar">Calendar</a></li>
-      <li><a href="#league">League</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="http://localhost:3001/roadmap">Roadmap</a></li>
+      <li><a href="http://localhost:3001/calendar">Calendar</a></li>
+      <li><a href="http://localhost:3001/league">League</a></li>
+      <li><a href="http://localhost:3001/contact">About</a></li>
     </ul>
-    <a href="backend/login.php" class="btn-login">Login / Sign Up</a>
+    <div class="nav-right">
+      <!-- Show these buttons when user is NOT logged in -->
+      <div class="auth-buttons" id="authButtons">
+        <a href="http://localhost:3001/login" class="btn-login">Log In</a>
+        <a href="http://localhost:3001/signup" class="btn-signup">Sign Up</a>
+      </div>
+      <!-- Show profile icon when user IS logged in (hidden by default) -->
+      <a href="http://localhost:3001/profile" class="profile-link" id="profileLink" style="display: none;">
+        <img src="design-specs/images/77_107.png" alt="Profile" class="profile-icon">
+      </a>
+    </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <div class="search-area">
-        <div class="search-bar">
-          <span class="search-placeholder">SEARCH</span>
+    <div class="hero-main-title">CYVE</div>
+    <div class="search-container">
+      <div class="search-bar">
+        <img src="design-specs/images/52_40.png" alt="Search" class="search-icon">
+        <input type="text" class="search-input" placeholder="Search for cybersecurity pathways..." id="pathwaySearch">
+      </div>
+      <div id="searchSuggestions" class="search-suggestions"></div>
+      <p class="tagline">CREATE. CONNECT. PROTECT.</p>
+    </div>
+    <!-- Results display container -->
+    <div id="careerDetails" class="career-details-section" style="display: none;">
+      <div class="career-content-card">
+        <button id="closeDetails" class="close-btn">&times;</button>
+        <h2 id="careerTitle"></h2>
+        <div class="career-info-grid">
+          <div class="info-group">
+            <h3>Description</h3>
+            <p id="careerDesc"></p>
+          </div>
+          <div class="info-group">
+            <h3>Required Skills</h3>
+            <ul id="careerSkills"></ul>
+          </div>
+          <div class="info-group">
+            <h3>Suggested Certifications</h3>
+            <ul id="careerCerts"></ul>
+          </div>
+          <div class="info-group">
+            <h3>Recommended Learning Path</h3>
+            <p id="careerLearning"></p>
+          </div>
         </div>
-        <p class="tagline">CREATE. CONNECT. PROTECT.</p>
-      </div>
-      <h1 class="hero-title">build, your, future</h1>
-      <p class="hero-subtitle">Your Roadmap Starts Here</p>
-      <p class="hero-description">Cybersecurity is one of the most in-demand and impactful careers in today's digital world. Whether you're a student, career shifter, or tech enthusiast, our platform provides clear, step-by-step roadmaps to help you navigate your journey into the field of cybersecurity.</p>
-    </div>
-  </section>
-
-  <!-- Hero Image Section -->
-  <section class="hero-image-section">
-    <div class="hero-image-wrapper">
-      <img src="design-specs/images/62_6.png" alt="Cybersecurity" class="hero-image hero-image--main">
-      <img src="design-specs/images/62_7.png" alt="Red Team / Offensive Security" class="hero-image hero-image--overlay">
-      <div class="hero-image-labels">
-        <span class="label-left">Red Team</span>
-        <span class="label-right">Offensive Security</span>
       </div>
     </div>
   </section>
 
-  <!-- UniQ Features Section -->
-  <section id="features" class="uniq-section">
-    <h2 class="uniq-title">UniQ</h2>
-    <div class="feature-cards">
-      <div class="feature-card">
-        <img src="design-specs/images/80_2.png" alt="Roadmap">
-        <span class="feature-label">Picture of Roadmap</span>
+  <!-- Sub-Hero Section -->
+  <section class="sub-hero">
+    <div class="sub-hero-left">
+      <div class="triangle-graphic"></div>
+      <div class="build-text">
+        <span>build,</span>
+        <span>your,</span>
+        <span>future</span>
       </div>
-      <div class="feature-card">
-        <img src="design-specs/images/80_3.png" alt="Map">
-        <span class="feature-label">Picture of Map</span>
+    </div>
+    <div class="sub-hero-right">
+      <h2 class="sub-hero-title">Your Roadmap Starts Here</h2>
+      <p class="sub-hero-description">
+        Cybersecurity is one of the most in-demand and impactful careers in today's digital world. Whether you're a
+        student, career shifter, or tech enthusiast, our platform provides clear, step-by-step roadmaps to help you
+        navigate your journey into the field of cybersecurity.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Sections -->
+  <section class="team-sections">
+    <!-- Red Team -->
+    <div class="team-card red-team">
+      <div class="team-bg" style="background-image: url('design-specs/images/62_6.png');"></div>
+      <div class="team-content">
+        <div class="team-focal-wrapper">
+          <img src="design-specs/images/62_7.png" alt="Red Team" class="team-focal-img">
+        </div>
+        <div class="team-labels">
+          <span class="team-label-left">Red Team</span>
+          <span class="team-label-right">Offensive Security</span>
+        </div>
       </div>
-      <div class="feature-card">
-        <img src="design-specs/images/80_5.png" alt="Note Capability">
-        <span class="feature-label">Picture of Note Capability</span>
+    </div>
+
+    <!-- Blue Team -->
+    <div class="team-card blue-team">
+      <div class="team-bg" style="background-image: url('design-specs/images/62_6.png');"></div>
+      <div class="team-content">
+        <div class="team-focal-wrapper">
+          <img src="design-specs/images/blue_team.png" alt="Blue Team" class="team-focal-img">
+        </div>
+        <div class="team-labels">
+          <span class="team-label-left">Blue Team</span>
+          <span class="team-label-right">Defensive Security</span>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-placeholder"></div>
-        <span class="feature-label">Picture of Calendar</span>
+    </div>
+
+    <!-- Purple Team -->
+    <div class="team-card purple-team">
+      <div class="team-bg" style="background-image: url('design-specs/images/62_6.png');"></div>
+      <div class="team-content">
+        <div class="team-focal-wrapper">
+          <img src="design-specs/images/purple_team.png" alt="Purple Team" class="team-focal-img">
+        </div>
+        <div class="team-labels">
+          <span class="team-label-left">Purple Team</span>
+          <span class="team-label-right">Collaboration & Optimization</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h2 class="footer-logo">CYVE</h2>
-        <p class="footer-tagline">PATHS FOR CYBERSECURITY</p>
+    <div class="footer-top">
+    </div>
+    <div class="footer-mid">
+      <div class="footer-column contact-info">
+        <div class="contact-item">
+          <img src="design-specs/images/52_13.png" alt="Phone" class="footer-icon">
+          <span>+63 000 000 0000</span>
+        </div>
+        <div class="contact-item">
+          <img src="design-specs/images/52_14.png" alt="Location" class="footer-icon">
+          <span>Angeles City</span>
+        </div>
       </div>
-      <div class="footer-contact">
-        <p>+63 000 000 0000</p>
-        <p>Angeles City</p>
+      <div class="footer-column contact-info">
+        <div class="contact-item">
+          <img src="design-specs/images/52_13.png" alt="Phone" class="footer-icon">
+          <span>+63 000 000 0000</span>
+        </div>
+        <div class="contact-item">
+          <img src="design-specs/images/52_14.png" alt="Location" class="footer-icon">
+          <span>Angeles City</span>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Navigate</h4>
+      <div class="footer-column link-group">
         <a href="#roadmap">Roadmap</a>
         <a href="#calendar">Calendar</a>
         <a href="#features">Recommendation</a>
       </div>
-      <div class="footer-links">
-        <h4>Contact Us</h4>
+      <div class="footer-column link-group">
+        <a href="#">Contact Us</a>
         <a href="#">Follow Us</a>
-        <a href="login.php">Login</a>
       </div>
     </div>
     <p class="footer-copyright">2026 CYVE. All Rights Reserved</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

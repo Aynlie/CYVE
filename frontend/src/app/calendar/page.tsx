@@ -1,7 +1,7 @@
 'use client';
 
 import ProtectedRoute from '@/components/ProtectedRoute';
-import { useCalendar, CalendarTask } from '@/context/CalendarContext';
+import { useCalendar } from '@/context/CalendarContext';
 import { useState } from 'react';
 import styles from './calendar.module.css';
 
@@ -14,7 +14,7 @@ export default function CalendarPage() {
 }
 
 function CalendarContent() {
-    const { tasks, toggleTaskCompletion, addTask, updateTask } = useCalendar();
+    const { tasks, addTask, toggleTaskCompletion } = useCalendar();
     const [currentDate, setCurrentDate] = useState(new Date());
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
     const [showTaskModal, setShowTaskModal] = useState(false);
@@ -143,12 +143,12 @@ function CalendarContent() {
                             <div className={styles.tasksList}>
                                 {selectedDayTasks.map(task => (
                                     <div key={task.id} className={styles.taskItem}>
-                                        <input
-                                            type="checkbox"
-                                            checked={task.completed}
-                                            onChange={() => toggleTaskCompletion(task.id)}
-                                            className={styles.checkbox}
-                                        />
+                                        <button
+                                            onClick={() => toggleTaskCompletion(task.id)}
+                                            className={`btn-icon ${task.completed ? 'btn-blue' : ''}`}
+                                        >
+                                            {task.completed ? '✓' : '☐'}
+                                        </button>
                                         <div className={styles.taskInfo}>
                                             <h4>{task.title}</h4>
                                             <p>{task.description}</p>

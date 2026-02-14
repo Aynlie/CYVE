@@ -1,3 +1,5 @@
+'use client';
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -7,6 +9,7 @@ import { AuthProvider } from '@/context/AuthContext';
 import { RoadmapProvider } from '@/context/RoadmapContext';
 import { CalendarProvider } from '@/context/CalendarContext';
 import { ProfileProvider } from '@/context/ProfileContext';
+import { usePathname } from 'next/navigation';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -14,11 +17,20 @@ const inter = Inter({
     variable: '--font-inter',
 });
 
-export const metadata: Metadata = {
-    title: 'CYVE - Paths for Cybersecurity',
-    description: 'Your roadmap to a successful career in cybersecurity. Learn, track your progress, and connect with opportunities in offensive and defensive security.',
-    keywords: 'cybersecurity, red team, blue team, purple team, security career, learning roadmap',
-};
+function LayoutContent({ children }: { children: React.ReactNode }) {
+    const pathname = usePathname();
+    const isAuthPage = pathname === '/login' || pathname === '/signup';
+
+    return (
+        <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+            <Header />
+            <main style={{ flex: 1 }}>
+                {children}
+            </main>
+            {!isAuthPage && <Footer />}
+        </div>
+    );
+}
 
 export default function RootLayout({
     children,
@@ -32,13 +44,9 @@ export default function RootLayout({
                     <RoadmapProvider>
                         <CalendarProvider>
                             <ProfileProvider>
-                                <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                                    <Header />
-                                    <main style={{ flex: 1 }}>
-                                        {children}
-                                    </main>
-                                    <Footer />
-                                </div>
+                                <LayoutContent>
+                                    {children}
+                                </LayoutContent>
                             </ProfileProvider>
                         </CalendarProvider>
                     </RoadmapProvider>

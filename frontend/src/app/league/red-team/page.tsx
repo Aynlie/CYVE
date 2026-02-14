@@ -10,7 +10,8 @@ export default function RedTeamPage() {
                 <header className={styles.header} style={{ borderColor: '#ff4444' }}>
                     <div className={styles.icon}>🔴</div>
                     <h1>Red Team - Offensive Security</h1>
-                    <p>Master the art of ethical hacking and penetration testing</p>
+                    Master the art of ethical hacking and penetration testing. It&apos;s about
+                    thinking like an attacker to build stronger defenses.
                 </header>
 
                 <section className={styles.section}>

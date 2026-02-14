@@ -10,6 +10,11 @@ export default function Header() {
     const { isAuthenticated, user, logout } = useAuth();
 
     const isActive = (path: string) => pathname === path;
+    const isAuthPage = pathname === '/login' || pathname === '/signup';
+
+    if (isAuthPage) {
+        return null; // Don't render header at all on auth pages
+    }
 
     return (
         <header className={styles.header}>
@@ -63,9 +68,14 @@ export default function Header() {
                             </button>
                         </>
                     ) : (
-                        <Link href="/login" className={styles.btnLogin}>
-                            Login/ Sign Up
-                        </Link>
+                        <div className={styles.authButtons}>
+                            <Link href="/login" className={styles.btnLogin}>
+                                Log In
+                            </Link>
+                            <Link href="/signup" className={styles.btnSignup}>
+                                Sign Up
+                            </Link>
+                        </div>
                     )}
                 </div>
             </div>

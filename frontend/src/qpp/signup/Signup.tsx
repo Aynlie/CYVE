@@ -33,14 +33,14 @@ const Signup: React.FC = () => {
         setLoading(true);
 
         try {
-            const result = await signup(email, password, fullName);
-            if (result) {
+            const result = await signup(fullName, email, password);
+            if (result.success) {
                 setSuccess('Welcome to CYVE! Your account has been created successfully.');
                 setTimeout(() => {
                     router.push('/');
                 }, 2000);
             } else {
-                setError('An account with this email or identity already exists.');
+                setError(result.message);
             }
         } catch (err) {
             setError('Sorry, something went wrong during registration. Please try again.');

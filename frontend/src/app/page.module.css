@@ -6,16 +6,21 @@
 .hero {
     padding: 3rem 4rem 4rem;
     background-color: #000000;
-}
-
-.heroContent {
-    max-width: 900px;
-    margin: 0 auto;
     text-align: center;
 }
 
-.searchArea {
-    margin-bottom: 2.5rem;
+.heroMainTitle {
+    font-family: var(--font-family-primary);
+    font-size: 128px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.searchContainer {
+    max-width: 900px;
+    margin: 0 auto 3rem;
 }
 
 .searchBar {
@@ -29,13 +34,30 @@
     align-items: center;
     padding: 0 2rem;
     margin: 0 auto 1rem;
+    position: relative;
 }
 
-.searchPlaceholder {
-    font-family: var(--font-family-primary);
+.searchInput {
+    width: 100%;
+    border: none;
+    outline: none;
     font-size: 1rem;
-    font-weight: 400;
-    color: #8d8d8d;
+    padding-left: 3rem;
+}
+
+.searchSuggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #d9d9d9;
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
 }
 
 .tagline {
@@ -44,95 +66,112 @@
     font-weight: 400;
     line-height: 38.73px;
     color: #ffffff;
-    margin: 0;
+    margin: 1rem 0 0;
     text-align: center;
 }
 
-.heroTitle {
+/* Sub-Hero Section */
+.subHero {
+    background-color: #000000;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.subHeroLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.triangleGraphic {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 87px solid #f5be1e;
+    margin-bottom: 2rem;
+}
+
+.buildText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.buildText span {
     font-family: var(--font-family-primary);
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 400;
-    line-height: 77.45px;
-    margin: 2rem 0 1rem;
     color: #ffffff;
-    text-align: center;
 }
 
-.heroSubtitle {
+.subHeroRight {
+    flex: 1;
+}
+
+.subHeroTitle {
     font-family: var(--font-family-primary);
     font-size: 32px;
     font-weight: 700;
-    line-height: 38.73px;
     color: #ffffff;
-    margin: 0 auto 1.5rem;
-    text-align: right;
-    max-width: 658px;
-    display: block;
+    margin: 0 0 1.5rem;
 }
 
-.heroDescription {
+.subHeroDescription {
     font-family: var(--font-family-primary);
     font-size: 1rem;
     font-weight: 400;
     color: #ffffff;
-    line-height: 1.5;
-    margin: 0 auto 2rem;
-    max-width: 658px;
-    text-align: left;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.ctaButtons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 3rem;
-}
-
-/* Team Sections - Red / Blue / Purple - Figma layout */
-.teamSection {
+/* Team Sections */
+.teamSections {
     background-color: #000000;
-    padding: 0 0 2rem;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-.teamImageWrapper {
-    position: relative;
-    max-width: 1511px;
+.teamCard {
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
 }
 
-.teamImageMain {
-    width: 100%;
-    height: 400px;
+.teamLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.teamContent {
+    position: relative;
     background: linear-gradient(135deg, rgba(245, 190, 30, 0.15), rgba(0, 0, 0, 0.9));
-    border: none;
-}
-
-.teamBlue {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(0, 0, 0, 0.9));
-}
-
-.teamPurple {
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(0, 0, 0, 0.9));
-}
-
-.teamImageCard {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 280px;
-    padding: 1.5rem 2rem;
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid #f5be1e;
+    min-height: 300px;
+    border-radius: var(--radius-lg);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
 
-.teamImagePlaceholder {
+.teamFocalWrapper {
+    margin-bottom: 2rem;
+}
+
+.teamFocalImg {
     font-family: var(--font-family-primary);
-    font-size: 24px;
+    font-size: 48px;
     font-weight: 700;
     color: #ffffff;
 }
@@ -140,11 +179,8 @@
 .teamLabels {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
-    padding: 0 2rem;
-    max-width: 1511px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    margin-top: auto;
 }
 
 .teamLabelLeft,
@@ -153,12 +189,6 @@
     font-size: 24px;
     font-weight: 400;
     color: #ffffff;
-}
-
-.teamLink {
-    text-decoration: none;
-    color: inherit;
-    display: block;
 }
 
 /* Features Section */

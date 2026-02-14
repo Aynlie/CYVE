@@ -1,76 +1,41 @@
 <?php
-<<<<<<< Updated upstream
-/**
- * CYVE - Secure User Login
- */
-include 'config.php';
-
-$message = '';
-$messageType = '';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $identity = trim($_POST['identity']); // Can be email or username
-    $password = $_POST['password'];
-
-    // Check user by identity (email or username)
-    $stmt = $conn->prepare("SELECT id, username, email, password, full_name, role FROM users WHERE email = ? OR username = ?");
-    $stmt->bind_param("ss", $identity, $identity);
-=======
 include 'config.php';
 
 $message = '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = sanitize($_POST['username']);
-    $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $identity = trim($_POST['identity'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-    $stmt = $conn->prepare("SELECT id, password, role FROM users WHERE username = ?");
-    $stmt->bind_param("s", $username);
->>>>>>> Stashed changes
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows == 1) {
-        $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) {
-<<<<<<< Updated upstream
-            // Set session variables
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['full_name'] = $user['full_name'];
-            $_SESSION['role'] = $user['role'];
-
-            // Log activity
-            log_activity($user['id'], 'login', 'User logged in via login.php');
-
-            // Redirect to dashboard
-            header('Location: dashboard.php');
-            exit();
-        }
-        else {
-            $message = 'Invalid password verification.';
-            $messageType = 'error';
-        }
-    }
-    else {
-        $message = 'User identity not recognized.';
-        $messageType = 'error';
-=======
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $username;
-            $_SESSION['role'] = $user['role'];
-            log_activity($user['id'], 'login', 'User logged in');
-            header('Location: dashboard.php');
-            exit();
-        } else {
-            $message = 'Invalid password.';
-        }
+    if ($identity === '' || $password === '') {
+        $message = 'Please provide both identity and password.';
     } else {
-        $message = 'User not found.';
->>>>>>> Stashed changes
+        $stmt = $conn->prepare("SELECT id, username, email, password, full_name, role FROM users WHERE email = ? OR username = ?");
+        $stmt->bind_param("ss", $identity, $identity);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 1) {
+            $user = $result->fetch_assoc();
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['full_name'] = $user['full_name'];
+                $_SESSION['role'] = $user['role'];
+
+                log_activity($user['id'], 'login', 'User logged in via login.php');
+                header('Location: dashboard.php');
+                exit();
+            } else {
+                $message = 'Invalid password.';
+                log_activity($user['id'], 'failed_login', 'Invalid password attempt via login.php');
+            }
+        } else {
+            $message = 'User not found.';
+        }
+        $stmt->close();
     }
-    $stmt->close();
 }
 ?>
 
@@ -79,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< Updated upstream
     <title>Login - CYVE Cybersecurity</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -220,8 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="message">
                 <?php echo $message; ?>
             </div>
-        <?php
-endif; ?>
+        <?php endif; ?>
 
         <form method="POST" action="login.php">
             <div class="form-group">
@@ -240,21 +203,6 @@ endif; ?>
         <div class="auth-footer">
             New to the path? <a href="signup.php">Enroll Now</a>
         </div>
-=======
-    <title>Login - CYVE</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Login</h2>
-        <?php if ($message) echo "<p class='message'>$message</p>"; ?>
-        <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p><a href="register.php">Register</a></p>
->>>>>>> Stashed changes
     </div>
 </body>
 </html>

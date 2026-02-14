@@ -20,22 +20,16 @@ export interface Experience {
     endDate: string;
 }
 
-<<<<<<< Updated upstream
 export type PreferredRole = 'red' | 'blue' | 'purple';
 
-=======
->>>>>>> Stashed changes
 export interface ProfileData {
     name: string;
     email: string;
     location: string;
     bio: string;
     phone: string;
-<<<<<<< Updated upstream
     /** User's chosen cybersecurity role path: Red (Offensive), Blue (Defensive), Purple (Hybrid) */
     preferredRole: PreferredRole | null;
-=======
->>>>>>> Stashed changes
     education: Education[];
     experience: Experience[];
     skills: string[];
@@ -61,10 +55,7 @@ const defaultProfile: ProfileData = {
     location: '',
     bio: '',
     phone: '',
-<<<<<<< Updated upstream
     preferredRole: null,
-=======
->>>>>>> Stashed changes
     education: [],
     experience: [],
     skills: [],
@@ -79,13 +70,9 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
     useEffect(() => {
         const storedProfile = localStorage.getItem('cyve_profile');
         if (storedProfile) {
-<<<<<<< Updated upstream
             const parsed = { ...defaultProfile, ...JSON.parse(storedProfile) };
             if (parsed.preferredRole === undefined) parsed.preferredRole = null;
             setProfile(parsed);
-=======
-            setProfile(JSON.parse(storedProfile));
->>>>>>> Stashed changes
         }
     }, []);
 

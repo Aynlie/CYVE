@@ -2,7 +2,6 @@
 
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { useAuth } from '@/context/AuthContext';
-<<<<<<< Updated upstream
 import { useProfile, type PreferredRole } from '@/context/ProfileContext';
 import { useRoadmap } from '@/context/RoadmapContext';
 import { useState } from 'react';
@@ -14,12 +13,6 @@ const ROLE_OPTIONS: { value: PreferredRole; label: string; desc: string }[] = [
     { value: 'purple', label: 'Purple Team', desc: 'Collaboration & Optimization' },
 ];
 
-=======
-import { useProfile } from '@/context/ProfileContext';
-import { useState } from 'react';
-import styles from './profile.module.css';
-
->>>>>>> Stashed changes
 export default function ProfilePage() {
     return (
         <ProtectedRoute>
@@ -31,10 +24,7 @@ export default function ProfilePage() {
 function ProfileContent() {
     const { user } = useAuth();
     const { profile, updateProfile, addEducation, removeEducation, addExperience, removeExperience, addSkill, removeSkill } = useProfile();
-<<<<<<< Updated upstream
     const { selectField } = useRoadmap();
-=======
->>>>>>> Stashed changes
     const [editing, setEditing] = useState(false);
     const [basicInfo, setBasicInfo] = useState({
         name: profile.name || user?.name || '',
@@ -57,14 +47,11 @@ function ProfileContent() {
         }
     };
 
-<<<<<<< Updated upstream
     const handleRoleSelect = (role: PreferredRole) => {
         updateProfile({ preferredRole: role });
         selectField(role);
     };
 
-=======
->>>>>>> Stashed changes
     return (
         <div className={styles.page}>
             <div className={styles.container}>
@@ -173,7 +160,6 @@ function ProfileContent() {
                     </div>
                 </section>
 
-<<<<<<< Updated upstream
                 {/* Career Path / Preferred Role */}
                 <section className={styles.section}>
                     <div className={styles.sectionHeader}>
@@ -200,8 +186,6 @@ function ProfileContent() {
                     )}
                 </section>
 
-=======
->>>>>>> Stashed changes
                 {/* Skills */}
                 <section className={styles.section}>
                     <div className={styles.sectionHeader}>

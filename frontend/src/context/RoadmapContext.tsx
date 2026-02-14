@@ -26,15 +26,11 @@ const defaultSteps: RoadmapStep[] = [
     { id: '5', title: 'Security Operations', description: 'Learn SOC analyst fundamentals', completed: false, field: 'blue' },
     { id: '6', title: 'Incident Response', description: 'Handle security incidents effectively', completed: false, field: 'blue' },
     { id: '7', title: 'Security Monitoring', description: 'Master SIEM tools and threat detection', completed: false, field: 'blue' },
-<<<<<<< Updated upstream
     { id: '8', title: 'Threat Hunting & Analysis', description: 'Proactive threat detection and investigation', completed: false, field: 'blue' },
     { id: '9', title: 'Security Foundations', description: 'Core security concepts for hybrid roles', completed: false, field: 'purple' },
     { id: '10', title: 'Defensive Operations', description: 'SOC and monitoring fundamentals', completed: false, field: 'purple' },
     { id: '11', title: 'Offensive Basics', description: 'Ethical hacking and vulnerability assessment', completed: false, field: 'purple' },
     { id: '12', title: 'Threat Intelligence & Collaboration', description: 'Analyze threats and bridge red-blue teams', completed: false, field: 'purple' },
-=======
-    { id: '8', title: 'Threat Intelligence', description: 'Analyze and respond to threats', completed: false, field: 'purple' },
->>>>>>> Stashed changes
 ];
 
 const RoadmapContext = createContext<RoadmapContextType | undefined>(undefined);

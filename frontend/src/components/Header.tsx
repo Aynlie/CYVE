@@ -21,16 +21,11 @@ export default function Header() {
                 <nav className={styles.nav}>
                     <Link
                         href="/"
-<<<<<<< Updated upstream
                         className={`${styles.navLink} ${styles.navHome} ${isActive('/') ? styles.active : ''}`}
-=======
-                        className={`${styles.navLink} ${isActive('/') ? styles.active : ''}`}
->>>>>>> Stashed changes
                     >
                         Home
                     </Link>
 
-<<<<<<< Updated upstream
                     <Link
                         href="/roadmap"
                         className={`${styles.navLink} ${isActive('/roadmap') ? styles.active : ''}`}
@@ -43,44 +38,17 @@ export default function Header() {
                     >
                         Calendar
                     </Link>
-=======
-                    {isAuthenticated && (
-                        <>
-                            <Link
-                                href="/roadmap"
-                                className={`${styles.navLink} ${isActive('/roadmap') ? styles.active : ''}`}
-                            >
-                                Roadmap
-                            </Link>
-                            <Link
-                                href="/calendar"
-                                className={`${styles.navLink} ${isActive('/calendar') ? styles.active : ''}`}
-                            >
-                                Calendar
-                            </Link>
-                        </>
-                    )}
-
->>>>>>> Stashed changes
                     <Link
                         href="/league"
                         className={`${styles.navLink} ${isActive('/league') || pathname?.startsWith('/league/') ? styles.active : ''}`}
                     >
                         League
                     </Link>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
                     <Link
                         href="/contact"
                         className={`${styles.navLink} ${isActive('/contact') ? styles.active : ''}`}
                     >
-<<<<<<< Updated upstream
                         About
-=======
-                        Contact
->>>>>>> Stashed changes
                     </Link>
                 </nav>
 
@@ -96,11 +64,7 @@ export default function Header() {
                         </>
                     ) : (
                         <Link href="/login" className={styles.btnLogin}>
-<<<<<<< Updated upstream
                             Login/ Sign Up
-=======
-                            Login / Sign Up
->>>>>>> Stashed changes
                         </Link>
                     )}
                 </div>

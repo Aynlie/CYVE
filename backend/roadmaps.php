@@ -1,7 +1,10 @@
 <?php
+<<<<<<< Updated upstream
 /**
  * CYVE - Operational Roadmaps
  */
+=======
+>>>>>>> Stashed changes
 include 'config.php';
 
 if (!isset($_SESSION['user_id'])) {
@@ -11,7 +14,10 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $role = $_SESSION['role'];
+<<<<<<< Updated upstream
 $username = $_SESSION['username'];
+=======
+>>>>>>> Stashed changes
 
 $message = '';
 
@@ -19,14 +25,25 @@ $message = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_roadmap'])) {
     $title = sanitize($_POST['title']);
     $description = sanitize($_POST['description']);
+<<<<<<< Updated upstream
     $steps_array = explode("\n", $_POST['steps']);
     $steps = json_encode(array_filter(array_map('trim', $steps_array)));
+=======
+    $steps = json_encode(array_map('sanitize', explode("\n", $_POST['steps'])));
+>>>>>>> Stashed changes
 
     $stmt = $conn->prepare("INSERT INTO roadmaps (title, description, steps, created_by) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("sssi", $title, $description, $steps, $user_id);
     if ($stmt->execute()) {
+<<<<<<< Updated upstream
         $message = 'Strategic roadmap deployed successfully.';
         log_activity($user_id, 'create_roadmap', "Created roadmap: $title");
+=======
+        $message = 'Roadmap created successfully.';
+        log_activity($user_id, 'create_roadmap', "Created roadmap: $title");
+    } else {
+        $message = 'Failed to create roadmap.';
+>>>>>>> Stashed changes
     }
     $stmt->close();
 }
@@ -36,9 +53,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_roadmap'])) {
     $id = $_POST['id'];
     $title = sanitize($_POST['title']);
     $description = sanitize($_POST['description']);
+<<<<<<< Updated upstream
     $steps_array = explode("\n", $_POST['steps']);
     $steps = json_encode(array_filter(array_map('trim', $steps_array)));
 
+=======
+    $steps = json_encode(array_map('sanitize', explode("\n", $_POST['steps'])));
+
+    // Check ownership or admin
+>>>>>>> Stashed changes
     $stmt = $conn->prepare("SELECT created_by FROM roadmaps WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -49,7 +72,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_roadmap'])) {
             $stmt = $conn->prepare("UPDATE roadmaps SET title = ?, description = ?, steps = ? WHERE id = ?");
             $stmt->bind_param("sssi", $title, $description, $steps, $id);
             if ($stmt->execute()) {
+<<<<<<< Updated upstream
                 $message = 'Strategy updated.';
+=======
+                $message = 'Roadmap updated successfully.';
+>>>>>>> Stashed changes
                 log_activity($user_id, 'update_roadmap', "Updated roadmap ID: $id");
             }
         }
@@ -70,7 +97,11 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
             $stmt = $conn->prepare("DELETE FROM roadmaps WHERE id = ?");
             $stmt->bind_param("i", $id);
             if ($stmt->execute()) {
+<<<<<<< Updated upstream
                 $message = 'Strategy archived.';
+=======
+                $message = 'Roadmap deleted.';
+>>>>>>> Stashed changes
                 log_activity($user_id, 'delete_roadmap', "Deleted roadmap ID: $id");
             }
         }
@@ -112,6 +143,7 @@ if (isset($_GET['edit']) && is_numeric($_GET['edit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmaps - CYVE</title>
+<<<<<<< Updated upstream
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -187,6 +219,62 @@ endif; ?>
                 </div>
             <?php
 endforeach; ?>
+=======
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <a href="index.html" class="logo">CYVE</a>
+        <ul class="nav-links">
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="roadmaps.php">Roadmaps</a></li>
+            <li><a href="calendar.php">Calendar</a></li>
+        </ul>
+        <a href="dashboard.php?logout" class="btn-login">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h2>Roadmaps</h2>
+        <?php if ($message) echo "<p class='message'>$message</p>"; ?>
+
+        <h3><?php echo $edit_roadmap ? 'Edit Roadmap' : 'Create Roadmap'; ?></h3>
+        <form method="POST">
+            <?php if ($edit_roadmap): ?>
+                <input type="hidden" name="id" value="<?php echo $edit_roadmap['id']; ?>">
+            <?php endif; ?>
+            <input type="text" name="title" placeholder="Roadmap Title" value="<?php echo $edit_roadmap ? htmlspecialchars($edit_roadmap['title']) : ''; ?>" required>
+            <textarea name="description" placeholder="Description"><?php echo $edit_roadmap ? htmlspecialchars($edit_roadmap['description']) : ''; ?></textarea>
+            <textarea name="steps" placeholder="Steps (one per line)"><?php echo $edit_roadmap ? htmlspecialchars(implode("\n", json_decode($edit_roadmap['steps'], true))) : ''; ?></textarea>
+            <button type="submit" name="<?php echo $edit_roadmap ? 'update_roadmap' : 'create_roadmap'; ?>"><?php echo $edit_roadmap ? 'Update' : 'Create'; ?> Roadmap</button>
+            <?php if ($edit_roadmap): ?>
+                <a href="roadmaps.php">Cancel</a>
+            <?php endif; ?>
+        </form>
+
+        <h3>All Roadmaps</h3>
+        <form method="GET">
+            <input type="text" name="search" placeholder="Search roadmaps..." value="<?php echo $search; ?>">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="roadmap-list">
+            <?php foreach ($roadmaps as $roadmap): ?>
+            <div class="roadmap-item">
+                <h4><?php echo htmlspecialchars($roadmap['title']); ?></h4>
+                <p><?php echo htmlspecialchars($roadmap['description']); ?></p>
+                <p>Created by: <?php echo htmlspecialchars($roadmap['creator']); ?></p>
+                <ul>
+                    <?php foreach (json_decode($roadmap['steps'], true) as $step): ?>
+                        <li><?php echo htmlspecialchars($step); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php if ($roadmap['created_by'] == $user_id || $role == 'admin'): ?>
+                    <a href="?edit=<?php echo $roadmap['id']; ?>">Edit</a>
+                    <a href="?delete=<?php echo $roadmap['id']; ?>" onclick="return confirm('Delete this roadmap?')">Delete</a>
+                <?php endif; ?>
+            </div>
+            <?php endforeach; ?>
+>>>>>>> Stashed changes
         </div>
     </div>
 </body>

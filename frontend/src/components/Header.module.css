@@ -62,6 +62,7 @@
     width: 100%;
 }
 
+<<<<<<< Updated upstream
 .navLink.navHome.active {
     background-color: var(--color-gold);
     color: var(--color-black);
@@ -78,6 +79,9 @@
 }
 
 .navLink.active:not(.navHome) {
+=======
+.navLink.active {
+>>>>>>> Stashed changes
     color: var(--color-gold);
 }
 
@@ -112,9 +116,12 @@
 .btnLogin {
     background-color: var(--color-gold);
     color: var(--color-black);
+<<<<<<< Updated upstream
     font-size: 30px;
     font-weight: 400;
     line-height: 1.2;
+=======
+>>>>>>> Stashed changes
 }
 
 .btnLogin:hover {

@@ -58,6 +58,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+<<<<<<< Updated upstream
 .roleHint {
     color: rgba(255, 255, 255, 0.8);
     margin: 0 0 1.5rem;
@@ -111,6 +112,8 @@
     color: var(--color-gold);
 }
 
+=======
+>>>>>>> Stashed changes
 .formGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

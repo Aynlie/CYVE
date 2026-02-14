@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Roadmap page - design match: black/gold, hex pattern, timeline, map, companies */
 
 .page {
@@ -758,5 +759,242 @@
 
     .companiesList {
         gap: 1rem;
+=======
+.page {
+    min-height: calc(100vh - 200px);
+    padding: 3rem 0;
+    background-color: var(--color-black);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 0.5rem;
+}
+
+.header p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.teamSelector {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.teamBtn {
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.teamBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.teamBtn.active {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.teamRed.active {
+    background-color: #ff4444;
+    color: white;
+}
+
+.teamBlue.active {
+    background-color: #4488ff;
+    color: white;
+}
+
+.teamPurple.active {
+    background-color: #a855f7;
+    color: white;
+}
+
+.teamInfo {
+    background-color: var(--color-dark-gray);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-gold);
+    margin-bottom: 2rem;
+}
+
+.teamInfo h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin: 0 0 0.5rem;
+}
+
+.teamInfo p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 1rem;
+}
+
+.learnMore {
+    color: var(--color-gold);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.progressSection {
+    background-color: var(--color-dark-gray);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 3rem;
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.progressPercent {
+    color: var(--color-gold);
+    font-size: 1.25rem;
+}
+
+.roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.stepContainer {
+    position: relative;
+}
+
+.step {
+    background-color: var(--color-dark-gray);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    transition: all var(--transition-base);
+}
+
+.step:hover {
+    border-color: var(--color-gold);
+    transform: translateX(8px);
+}
+
+.step.completed {
+    border-color: var(--color-gold);
+    background-color: rgba(245, 190, 30, 0.05);
+}
+
+.stepNumber {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    flex-shrink: 0;
+}
+
+.step.completed .stepNumber {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+.stepContent {
+    flex: 1;
+}
+
+.stepContent h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 0.5rem;
+}
+
+.stepContent p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1.5rem;
+    line-height: 1.6;
+}
+
+.stepActions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.connector {
+    width: 4px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-left: 29px;
+}
+
+.congratulations {
+    background: linear-gradient(135deg, var(--color-gold), #daa91a);
+    color: var(--color-black);
+    padding: 3rem;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.congratulations h2 {
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+}
+
+.congratulations p {
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .step {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .connector {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .stepActions {
+        flex-direction: column;
+        align-items: stretch;
+>>>>>>> Stashed changes
     }
 }

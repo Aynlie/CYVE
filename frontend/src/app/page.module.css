@@ -5,7 +5,11 @@
 /* Logged Out Home - Hero Section */
 .hero {
     padding: 3rem 4rem 4rem;
+<<<<<<< Updated upstream
     background-color: #000000;
+=======
+    background-color: var(--color-black);
+>>>>>>> Stashed changes
 }
 
 .heroContent {
@@ -22,7 +26,11 @@
     width: 100%;
     max-width: 899px;
     height: 107px;
+<<<<<<< Updated upstream
     background-color: #ffffff;
+=======
+    background-color: var(--color-white);
+>>>>>>> Stashed changes
     border: 1px solid #d9d9d9;
     border-radius: var(--radius-md);
     display: flex;
@@ -32,13 +40,18 @@
 }
 
 .searchPlaceholder {
+<<<<<<< Updated upstream
     font-family: var(--font-family-primary);
     font-size: 1rem;
     font-weight: 400;
+=======
+    font-size: 1rem;
+>>>>>>> Stashed changes
     color: #8d8d8d;
 }
 
 .tagline {
+<<<<<<< Updated upstream
     font-family: var(--font-family-primary);
     font-size: 32px;
     font-weight: 400;
@@ -79,6 +92,38 @@
     margin: 0 auto 2rem;
     max-width: 658px;
     text-align: left;
+=======
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-white);
+    margin: 0;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 2rem 0 1rem;
+    color: var(--color-white);
+}
+
+.heroSubtitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 1.5rem;
+}
+
+.heroDescription {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin: 0 0 2rem;
+    max-width: 658px;
+    margin-left: auto;
+    margin-right: auto;
+>>>>>>> Stashed changes
 }
 
 .ctaButtons {
@@ -88,6 +133,7 @@
     margin-top: 3rem;
 }
 
+<<<<<<< Updated upstream
 /* Team Sections - Red / Blue / Purple - Figma layout */
 .teamSection {
     background-color: #000000;
@@ -159,11 +205,51 @@
     text-decoration: none;
     color: inherit;
     display: block;
+=======
+/* Hero Image Section */
+.heroImageSection {
+    padding: 0 4rem 4rem;
+    background-color: var(--color-black);
+}
+
+.heroImageWrapper {
+    position: relative;
+    max-width: 1511px;
+    margin: 0 auto;
+}
+
+.heroImagePlaceholder {
+    width: 100%;
+    min-height: 400px;
+    background: linear-gradient(135deg, rgba(245, 190, 30, 0.1), rgba(0, 0, 0, 0.8));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--color-gold);
+    border: 2px solid rgba(245, 190, 30, 0.3);
+}
+
+.imageLabels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding: 0 2rem;
+}
+
+.labelLeft,
+.labelRight {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-white);
+>>>>>>> Stashed changes
 }
 
 /* Features Section */
 .featuresSection {
     padding: 5rem 4rem;
+<<<<<<< Updated upstream
     background-color: #000000;
 }
 
@@ -175,13 +261,30 @@
     text-align: center;
     margin: 0 0 4rem;
     color: #f5be1e;
+=======
+    background-color: var(--color-black);
+}
+
+.sectionTitle {
+    font-size: 8rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 4rem;
+    color: var(--color-gold);
+>>>>>>> Stashed changes
 }
 
 .featureGrid {
     display: grid;
+<<<<<<< Updated upstream
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
+=======
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+>>>>>>> Stashed changes
     margin: 0 auto;
 }
 
@@ -189,6 +292,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< Updated upstream
     justify-content: center;
     gap: 1rem;
     padding: 2rem;
@@ -220,6 +324,39 @@
     font-weight: 700;
     line-height: 43.57px;
     color: #000000;
+=======
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--color-dark-gray);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-base);
+    text-align: center;
+}
+
+.featureCard:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245, 190, 30, 0.5);
+    box-shadow: var(--shadow-glow);
+}
+
+.featureIcon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin: 0 0 0.5rem;
+}
+
+.featureCard p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+>>>>>>> Stashed changes
     margin: 0;
 }
 
@@ -406,7 +543,10 @@
 @media (max-width: 1200px) {
     .featureGrid {
         grid-template-columns: repeat(2, 1fr);
+<<<<<<< Updated upstream
         gap: 1.5rem;
+=======
+>>>>>>> Stashed changes
     }
 
     .statsGrid {
@@ -434,7 +574,10 @@
 
     .sectionTitle {
         font-size: 4rem;
+<<<<<<< Updated upstream
         line-height: 1.2;
+=======
+>>>>>>> Stashed changes
     }
 
     .welcomeTitle {
@@ -474,11 +617,14 @@
 
     .sectionTitle {
         font-size: 2.5rem;
+<<<<<<< Updated upstream
         line-height: 1.2;
     }
 
     .featureCardTitle {
         font-size: 1.25rem;
+=======
+>>>>>>> Stashed changes
     }
 
     .featureGrid,

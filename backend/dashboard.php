@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 /**
  * CYVE - Premium Dashboard
  * Secure event management and platform overview.
@@ -6,6 +7,10 @@
 include 'config.php';
 
 // Authentication check
+=======
+include 'config.php';
+
+>>>>>>> Stashed changes
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
@@ -14,10 +19,15 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $role = $_SESSION['role'];
 $username = $_SESSION['username'];
+<<<<<<< Updated upstream
 $full_name = isset($_SESSION['full_name']) ? $_SESSION['full_name'] : $username;
 
 $message = '';
 $messageType = '';
+=======
+
+$message = '';
+>>>>>>> Stashed changes
 
 // Handle logout
 if (isset($_GET['logout'])) {
@@ -37,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_event'])) {
     $stmt = $conn->prepare("INSERT INTO events (title, description, event_date, location, created_by) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssi", $title, $description, $event_date, $location, $user_id);
     if ($stmt->execute()) {
+<<<<<<< Updated upstream
         $message = 'Mission briefing created successfully.';
         $messageType = 'success';
         log_activity($user_id, 'create_event', "Created event: $title");
@@ -44,6 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_event'])) {
     else {
         $message = 'Failed to create mission briefing.';
         $messageType = 'error';
+=======
+        $message = 'Event created successfully.';
+        log_activity($user_id, 'create_event', "Created event: $title");
+    } else {
+        $message = 'Failed to create event.';
+>>>>>>> Stashed changes
     }
     $stmt->close();
 }
@@ -54,8 +71,12 @@ if ($role == 'admin' && isset($_GET['approve']) && is_numeric($_GET['approve']))
     $stmt = $conn->prepare("UPDATE events SET status = 'approved', approved_by = ? WHERE id = ?");
     $stmt->bind_param("ii", $user_id, $event_id);
     if ($stmt->execute()) {
+<<<<<<< Updated upstream
         $message = 'Mission approved for deployment.';
         $messageType = 'success';
+=======
+        $message = 'Event approved.';
+>>>>>>> Stashed changes
         log_activity($user_id, 'approve_event', "Approved event ID: $event_id");
     }
     $stmt->close();
@@ -75,8 +96,12 @@ if (isset($_GET['delete']) && is_numeric($_GET['delete'])) {
             $stmt = $conn->prepare("DELETE FROM events WHERE id = ?");
             $stmt->bind_param("i", $event_id);
             if ($stmt->execute()) {
+<<<<<<< Updated upstream
                 $message = 'Mission aborted and removed.';
                 $messageType = 'success';
+=======
+                $message = 'Event deleted.';
+>>>>>>> Stashed changes
                 log_activity($user_id, 'delete_event', "Deleted event ID: $event_id");
             }
         }
@@ -101,6 +126,7 @@ $events = $result->fetch_all(MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - CYVE</title>
+<<<<<<< Updated upstream
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -255,6 +281,73 @@ endif; ?>
                 </tbody>
             </table>
         </div>
+=======
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navigation">
+        <a href="index.html" class="logo">CYVE</a>
+        <ul class="nav-links">
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="roadmaps.php">Roadmaps</a></li>
+            <li><a href="calendar.php">Calendar</a></li>
+        </ul>
+        <a href="?logout" class="btn-login">Logout (<?php echo $username; ?>)</a>
+    </nav>
+
+    <div class="container">
+        <h2>Dashboard</h2>
+        <?php if ($message) echo "<p class='message'>$message</p>"; ?>
+
+        <h3>Create Event</h3>
+        <form method="POST">
+            <input type="text" name="title" placeholder="Event Title" required>
+            <input type="datetime-local" name="event_date" required>
+            <textarea name="description" placeholder="Description"></textarea>
+            <input type="text" name="location" placeholder="Location">
+            <button type="submit" name="create_event">Create Event</button>
+        </form>
+
+        <h3>Events</h3>
+        <form method="GET">
+            <input type="text" name="search" placeholder="Search events..." value="<?php echo $search; ?>">
+            <button type="submit">Search</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Creator</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($events as $event): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($event['title']); ?></td>
+                    <td><?php echo htmlspecialchars($event['description']); ?></td>
+                    <td><?php echo $event['event_date']; ?></td>
+                    <td><?php echo htmlspecialchars($event['location']); ?></td>
+                    <td><?php echo $event['status']; ?></td>
+                    <td><?php echo htmlspecialchars($event['creator']); ?></td>
+                    <td>
+                        <?php if ($role == 'admin' && $event['status'] == 'pending'): ?>
+                            <a href="?approve=<?php echo $event['id']; ?>">Approve</a>
+                        <?php endif; ?>
+                        <?php if ($event['created_by'] == $user_id || $role == 'admin'): ?>
+                            <a href="?delete=<?php echo $event['id']; ?>" onclick="return confirm('Delete this event?')">Delete</a>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+>>>>>>> Stashed changes
     </div>
 </body>
 </html>

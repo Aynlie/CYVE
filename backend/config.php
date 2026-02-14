@@ -1,6 +1,10 @@
 <?php
 // Database configuration
+<<<<<<< Updated upstream
 define('DB_HOST', '127.0.0.1');
+=======
+define('DB_HOST', 'localhost');
+>>>>>>> Stashed changes
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'cyve');
@@ -8,6 +12,7 @@ define('DB_NAME', 'cyve');
 // Create connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
+<<<<<<< Updated upstream
 // CORS Handling
 $allowed_origin = "http://localhost:3000";
 if (isset($_SERVER['HTTP_ORIGIN']) && $_SERVER['HTTP_ORIGIN'] === $allowed_origin) {
@@ -51,13 +56,29 @@ function send_response($success, $message, $data = [], $code = 200)
 // Function to sanitize input
 function sanitize($data)
 {
+=======
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Start session
+session_start();
+
+// Function to sanitize input
+function sanitize($data) {
+>>>>>>> Stashed changes
     global $conn;
     return mysqli_real_escape_string($conn, trim($data));
 }
 
 // Function to log activity
+<<<<<<< Updated upstream
 function log_activity($user_id, $action, $details = '')
 {
+=======
+function log_activity($user_id, $action, $details = '') {
+>>>>>>> Stashed changes
     global $conn;
     $stmt = $conn->prepare("INSERT INTO audit_log (user_id, action, details) VALUES (?, ?, ?)");
     $stmt->bind_param("iss", $user_id, $action, $details);

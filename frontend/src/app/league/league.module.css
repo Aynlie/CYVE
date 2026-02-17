@@ -1,0 +1,489 @@
+.page {
+    min-height: 100vh;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0;
+}
+
+/* Cybersecurity Dotted Pattern Background */
+.backgroundPattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(245, 190, 30, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(68, 136, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 68, 68, 0.02) 0%, transparent 50%);
+    background-size: 100% 100%;
+    z-index: 0;
+}
+
+.backgroundPattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(245, 190, 30, 0.03) 2px,
+            rgba(245, 190, 30, 0.03) 4px),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(245, 190, 30, 0.03) 2px,
+            rgba(245, 190, 30, 0.03) 4px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+}
+
+.backgroundPattern::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle, rgba(245, 190, 30, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(245, 190, 30, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0, 15px 15px;
+    }
+
+    100% {
+        background-position: 30px 30px, 45px 45px;
+    }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--color-white);
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Swipeable Cards Container */
+.cardsWrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: visible;
+    cursor: grab;
+    user-select: none;
+    padding: 2rem 0;
+}
+
+.cardsWrapper:active {
+    cursor: grabbing;
+}
+
+.cardsContainer {
+    display: flex;
+    width: 300%;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cardWrapper {
+    width: 33.333%;
+    padding: 0 1rem;
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.5;
+    transform: scale(0.85);
+    pointer-events: none;
+    will-change: transform, opacity;
+}
+
+.cardWrapper.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.cardWrapper.left {
+    transform: scale(0.85) translateX(10%);
+}
+
+.cardWrapper.right {
+    transform: scale(0.85) translateX(-10%);
+}
+
+/* Team Card */
+.teamCard {
+    background-color: #0a0a0a;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(245, 190, 30, 0.1);
+    position: relative;
+}
+
+.teamCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, transparent, rgba(245, 190, 30, 0.3), transparent);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cardWrapper.active .teamCard::before {
+    opacity: 1;
+}
+
+/* Card Visual Section */
+.cardVisual {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circuitPattern {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: rotate 20s linear infinite;
+}
+
+.circuitPattern::before,
+.circuitPattern::after {
+    content: '';
+    position: absolute;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+}
+
+.circuitPattern::before {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 15s linear infinite reverse;
+}
+
+.circuitPattern::after {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.glowOrb {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(40px);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.25;
+    }
+}
+
+.teamSymbol {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* Card Content */
+.cardContent {
+    padding: 2.5rem;
+    background: linear-gradient(to bottom, #0a0a0a, #000000);
+}
+
+.cardContent h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cardContent h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+}
+
+.roleSection {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border-left: 3px solid var(--color-gold);
+}
+
+.roleSection h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 0.5rem;
+}
+
+.roleSection p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.tasksSection {
+    margin-bottom: 2rem;
+}
+
+.tasksSection h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 1rem;
+}
+
+.tasksSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.tasksSection li {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 2px solid rgba(245, 190, 30, 0.5);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tasksSection li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--color-gold);
+    transform: translateX(4px);
+}
+
+.exploreBtn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.exploreBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    opacity: 0.1;
+    transition: left 0.4s ease;
+}
+
+.exploreBtn:hover::before {
+    left: 0;
+}
+
+.exploreBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px currentColor;
+}
+
+/* Navigation Dots */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.navDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.navDot:hover {
+    transform: scale(1.3);
+}
+
+.activeDot {
+    width: 40px;
+    border-radius: 6px;
+}
+
+/* Instructions */
+.instructions {
+    text-align: center;
+    margin-top: 3rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .cardVisual {
+        height: 200px;
+    }
+
+    .cardContent {
+        padding: 1.5rem;
+    }
+
+    .cardContent h2 {
+        font-size: 2rem;
+    }
+
+    .circuitPattern {
+        width: 150px;
+        height: 150px;
+    }
+
+    .glowOrb {
+        width: 80px;
+        height: 80px;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .cardsWrapper {
+        padding: 1rem 0;
+    }
+
+    .cardWrapper {
+        padding: 0 0.5rem;
+    }
+
+    .cardContent h2 {
+        font-size: 1.75rem;
+    }
+
+
+}

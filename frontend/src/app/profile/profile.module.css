@@ -1,0 +1,239 @@
+.page {
+    min-height: calc(100vh - 200px);
+    padding: 3rem 0;
+    background-color: var(--color-black);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 0.5rem;
+}
+
+.header p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.sectionHeader h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin: 0;
+}
+
+.editActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.card {
+    background-color: var(--color-dark-gray);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.infoDisplay {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.infoItem .label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-gold);
+    text-transform: uppercase;
+}
+
+.infoItem span:last-child {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.skillTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(245, 190, 30, 0.2);
+    color: var(--color-gold);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gold);
+    font-weight: 600;
+}
+
+.removeBtn {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.removeBtn:hover {
+    color: #ff4444;
+}
+
+.addSkill {
+    display: flex;
+    gap: 1rem;
+}
+
+.addSkill input {
+    flex: 1;
+}
+
+.emptyState {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    padding: 2rem;
+    margin: 0;
+}
+
+.certList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.certItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certItem span {
+    font-size: 1.125rem;
+    color: var(--color-white);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-base);
+}
+
+.listItem:hover {
+    border-color: var(--color-gold);
+}
+
+.itemContent {
+    flex: 1;
+}
+
+.itemContent h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 0 0 0.5rem;
+}
+
+.itemContent p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 0.25rem;
+}
+
+.description {
+    margin-top: 0.5rem !important;
+    line-height: 1.5 !important;
+}
+
+.date {
+    color: var(--color-gold) !important;
+    font-size: 0.875rem !important;
+    margin-top: 0.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .sectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .formGrid,
+    .infoDisplay {
+        grid-template-columns: 1fr;
+    }
+
+    .addSkill {
+        flex-direction: column;
+    }
+
+    .listItem {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+}

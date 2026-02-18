@@ -100,29 +100,26 @@ export const STEP_EXTRA: Record<string, StepExtraInfo> = {
   '12': { duration: '4–8 weeks', skills: ['Purple teaming', 'Threat intel', 'Collaboration'], resources: [{ label: 'Purple Team Guide', url: 'https://purpleteamdefense.com' }, { label: 'MITRE ATT&CK', url: 'https://attack.mitre.org' }] },
 };
 
-const RED_COMPANIES_UPDATED: CompanyInfo[] = [
-  { name: 'Offensive Security', address: 'Global (Remote)', description: 'Creators of Kali Linux & OSCP; penetration testing training and certifications.', roles: ['Penetration Tester', 'Security Researcher', 'Training'], website: 'https://www.offensive-security.com', latLng: [37.77, -122.42] },
-  { name: 'Rapid7', address: 'Boston, MA, USA', description: 'Vulnerability management and penetration testing solutions.', roles: ['Penetration Tester', 'Vulnerability Researcher', 'Security Engineer'], website: 'https://www.rapid7.com/careers', latLng: [42.36, -71.06] },
-  { name: 'Bugcrowd', address: 'San Francisco, CA, USA', description: 'Crowdsourced security and bug bounty platform.', roles: ['Security Researcher', 'Pentester', 'Program Manager'], website: 'https://www.bugcrowd.com/careers', latLng: [37.77, -122.42] },
-  { name: 'HackerOne', address: 'San Francisco, CA, USA', description: 'Security platform connecting organizations with ethical hackers.', roles: ['Security Engineer', 'Pentester', 'Trust & Safety'], website: 'https://www.hackerone.com/careers', latLng: [37.77, -122.42] },
+const RED_COMPANIES_PH: CompanyInfo[] = [
+  { name: 'GuidePoint Security PH', address: 'Makati City, Metro Manila', description: 'Specialized in penetration testing, vulnerability management, and offensive security consulting.', roles: ['Penetration Tester', 'Red Team Operator', 'Security Consultant'], website: 'https://www.guidepointsecurity.com', latLng: [14.5547, 121.0244] },
+  { name: 'Secuna', address: 'BGC, Taguig City', description: 'The first and only crowdsourced cybersecurity testing platform in the Philippines.', roles: ['Bug Bounty Hunter', 'Security Researcher', 'Vulnerability Analyst'], website: 'https://secuna.io', latLng: [14.5486, 121.0477] },
+  { name: 'Imperva (CloudVector PH)', address: 'Pasig City, Metro Manila', description: 'Offensive security research and API security specialists.', roles: ['Security Engineer', 'Exploit Developer', 'Research Analyst'], website: 'https://www.imperva.com', latLng: [14.5869, 121.0614] },
 ];
 
-const BLUE_COMPANIES_UPDATED: CompanyInfo[] = [
-  { name: 'Palo Alto Networks', address: 'Santa Clara, CA, USA', description: 'Cybersecurity and SOC solutions; next-gen firewalls and threat detection.', roles: ['SOC Analyst', 'Security Engineer', 'Threat Researcher'], website: 'https://jobs.paloaltonetworks.com', latLng: [37.35, -121.95] },
-  { name: 'CrowdStrike', address: 'Austin, TX, USA', description: 'Endpoint protection and incident response; Falcon platform.', roles: ['Incident Response', 'Threat Hunter', 'Security Analyst'], website: 'https://www.crowdstrike.com/careers', latLng: [30.27, -97.74] },
-  { name: 'Mandiant (Google Cloud)', address: 'Reston, VA, USA', description: 'Incident response, threat intelligence, and managed detection.', roles: ['Incident Responder', 'Consultant', 'Threat Intel'], website: 'https://www.mandiant.com/careers', latLng: [38.96, -77.36] },
-  { name: 'Splunk', address: 'San Francisco, CA, USA', description: 'SIEM and security analytics; SOC and observability platforms.', roles: ['Security Analyst', 'SIEM Engineer', 'Detection Engineer'], website: 'https://www.splunk.com/en_us/careers.html', latLng: [37.77, -122.42] },
+const BLUE_COMPANIES_PH: CompanyInfo[] = [
+  { name: 'Globe Business (MSOC)', address: 'Taguig City, Metro Manila', description: 'Operates one of the largest Managed Security Operations Centers in the Philippines.', roles: ['SOC Analyst', 'Incident Responder', 'Threat Hunter'], website: 'https://www.globe.com.ph/business/enterprise/cybersecurity.html', latLng: [14.5498, 121.0437] },
+  { name: 'PLDT Enterprise (Cyber Security)', address: 'Makati City, Metro Manila', description: 'Comprehensive defensive security services for enterprises across the archipelago.', roles: ['Security Analyst', 'SIEM Engineer', 'Forensics Investigator'], website: 'https://pldtenterprise.com', latLng: [14.5586, 121.0214] },
+  { name: 'Trend Micro Philippines', address: 'Pasig City, Metro Manila', description: 'Global leader in cloud security with a massive threat research and SOC presence in Manila.', roles: ['Threat Researcher', 'Malware Analyst', 'Technical Support Engineer'], website: 'https://www.trendmicro.com', latLng: [14.5886, 121.0650] },
 ];
 
-const PURPLE_COMPANIES_UPDATED: CompanyInfo[] = [
-  { name: 'IBM Security', address: 'Armonk, NY, USA', description: 'Hybrid security services; X-Force and consulting.', roles: ['Security Consultant', 'Red Team', 'Advisory'], website: 'https://www.ibm.com/careers', latLng: [41.13, -73.71] },
-  { name: 'Accenture Security', address: 'Dublin, Ireland', description: 'Security consulting; red + blue team and strategy.', roles: ['Cybersecurity Consultant', 'Penetration Tester', 'SOC'], website: 'https://www.accenture.com/careers', latLng: [53.35, -6.26] },
-  { name: 'Deloitte Cyber', address: 'Global', description: 'Risk and cyber strategy; offensive and defensive services.', roles: ['Cyber Consultant', 'Penetration Tester', 'IR'], website: 'https://www2.deloitte.com/careers', latLng: [40.71, -74.01] },
-  { name: 'KPMG Cyber Security', address: 'Amstelveen, Netherlands', description: 'Advisory and managed security; purple team engagements.', roles: ['Cyber Consultant', 'Penetration Tester', 'Advisory'], website: 'https://home.kpmg/careers', latLng: [52.3, 4.86] },
+const PURPLE_COMPANIES_PH: CompanyInfo[] = [
+  { name: 'ePLDT Vitro', address: 'Pasig City, PH', description: 'Data center and multi-cloud security strategy involving both offensive and defensive testing.', roles: ['Cloud Security Architect', 'Purple Team Lead', 'Risk Manager'], website: 'https://www.epldt.com', latLng: [14.5822, 121.0597] },
+  { name: 'Insular Life (Cyber Governance)', address: 'Alabang, Muntinlupa', description: 'Hybrid security operations focusing on governance, strategy, and collaborative defense.', roles: ['Cyber Strategy', 'GRC Analyst', 'Security Advisory'], website: 'https://www.insularlife.com.ph', latLng: [14.4206, 121.0326] },
+  { name: 'Nexus Technologies', address: 'Makati City, PH', description: 'Systems integration and hybrid security services for financial and government sectors.', roles: ['Security Consultant', 'Solutions Architect', 'Advisory'], website: 'https://www.nexustech.com.ph', latLng: [14.5571, 121.0189] },
 ];
 
 export const ROLE_COMPANIES: Record<RoleKey, CompanyInfo[]> = {
-  red: RED_COMPANIES_UPDATED,
-  blue: BLUE_COMPANIES_UPDATED,
-  purple: PURPLE_COMPANIES_UPDATED,
+  red: RED_COMPANIES_PH,
+  blue: BLUE_COMPANIES_PH,
+  purple: PURPLE_COMPANIES_PH,
 };

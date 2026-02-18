@@ -32,21 +32,25 @@ export default function RoadmapMap({ companies, userCenter, className }: Roadmap
     if (!mounted || typeof window === 'undefined' || !containerRef.current) return;
 
     let isCancelled = false;
-    let L: any = null;
 
     const initMap = async () => {
       // Import Leaflet dynamically
-      L = (await import('leaflet')).default;
+      const LeafletModule = await import('leaflet');
+      const L = LeafletModule.default;
 
       if (isCancelled || !containerRef.current) return;
 
       // Clean up any existing map instance before creating a new one
       if (mapRef.current) {
-        mapRef.current.remove();
+        try {
+          mapRef.current.remove();
+        } catch (e) {
+          console.warn('Preprocessing map removal error:', e);
+        }
         mapRef.current = null;
       }
 
-      // Initialize map
+      // Initialize map immediately and store in ref
       const withCoords = companies.filter((c): c is CompanyInfo & { latLng: [number, number] } => c.latLng != null);
       const center = userCenter ?? DEFAULT_CENTER;
       const zoom = withCoords.length > 0 ? PIN_ZOOM : DEFAULT_ZOOM;
@@ -56,10 +60,19 @@ export default function RoadmapMap({ companies, userCenter, className }: Roadmap
         zoom,
         scrollWheelZoom: true,
       });
+      mapRef.current = map;
+
+      if (isCancelled) {
+        map.remove();
+        mapRef.current = null;
+        return;
+      }
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }).addTo(map);
+
+      if (isCancelled) return;
 
       const goldIcon = L.divIcon({
         className: 'cyve-marker',
@@ -91,6 +104,8 @@ export default function RoadmapMap({ companies, userCenter, className }: Roadmap
         markers.push(marker);
       });
 
+      if (isCancelled) return;
+
       L.circle(center, {
         radius: RADIUS_METERS,
         color: '#f5be1e',
@@ -99,12 +114,10 @@ export default function RoadmapMap({ companies, userCenter, className }: Roadmap
         weight: 1,
       }).addTo(map);
 
-      if (withCoords.length > 0) {
+      if (withCoords.length > 0 && !isCancelled) {
         const group = L.featureGroup(markers as Leaflet.Layer[]);
         map.fitBounds(group.getBounds().pad(0.3));
       }
-
-      mapRef.current = map;
     };
 
     initMap();
@@ -112,13 +125,16 @@ export default function RoadmapMap({ companies, userCenter, className }: Roadmap
     return () => {
       isCancelled = true;
       if (mapRef.current) {
-        // Wrap in try-catch to avoid "removeChild" errors during unmount/HMR
-        try {
-          mapRef.current.remove();
-        } catch (e) {
-          console.warn('Leaflet map removal error:', e);
-        }
+        const mapToCleanup = mapRef.current;
         mapRef.current = null;
+        // Small delay to let React finish unmounting before Leaflet touches DOM
+        setTimeout(() => {
+          try {
+            mapToCleanup.remove();
+          } catch (e) {
+            // Ignore removeChild errors during unmount as node is already gone
+          }
+        }, 0);
       }
     };
   }, [mounted, companies, userCenter]);

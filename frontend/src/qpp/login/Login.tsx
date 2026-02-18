@@ -42,8 +42,8 @@ const Login: React.FC = () => {
         <div className={styles.authPage}>
             <div className={styles.authCard}>
                 <div className={styles.authHeader}>
-                    <h1>CYVE Auth</h1>
-                    <p>Access your cybersecurity headquarters</p>
+                    <h1>CYVE</h1>
+                    <p>Secure your future in Cybersecurity</p>
                 </div>
 
                 {error && (
@@ -98,7 +98,7 @@ const Login: React.FC = () => {
                 </form>
 
                 <div className={styles.authFooter}>
-                    New to the path? <Link href="/signup">Enroll Now</Link>
+                    New to CYVE? <Link href="/signup">Sign Up Now</Link>
                 </div>
             </div>
         </div>

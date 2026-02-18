@@ -53,7 +53,7 @@ const Signup: React.FC = () => {
         <div className={styles.authPage}>
             <div className={styles.authCard}>
                 <div className={styles.authHeader}>
-                    <h1>CYVE Enrollment</h1>
+                    <h1>CYVE</h1>
                     <p>Secure your future in cybersecurity</p>
                 </div>
 

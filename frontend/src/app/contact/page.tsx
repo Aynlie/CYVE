@@ -123,23 +123,23 @@ export default function ContactPage() {
                         ) : (
                             <form onSubmit={handleSubmit} className={styles.form}>
                                 <div className={styles.field}>
-                                    <label className={styles.label}>Callsign (Name)</label>
+                                    <label className={styles.label}>Full Name</label>
                                     <input
                                         name="name"
                                         className={styles.input}
-                                        placeholder="Agent Name"
+                                        placeholder="Juan Dela Cruz"
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
                                     />
                                 </div>
                                 <div className={styles.field}>
-                                    <label className={styles.label}>Digital Address (Email)</label>
+                                    <label className={styles.label}>Email Address</label>
                                     <input
                                         name="email"
                                         type="email"
                                         className={styles.input}
-                                        placeholder="agent@cyve.com"
+                                        placeholder="juan@cyve.com"
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
@@ -169,7 +169,7 @@ export default function ContactPage() {
                                     />
                                 </div>
                                 <button type="submit" className={styles.submitBtn}>
-                                    Establish Link
+                                    Send
                                 </button>
                             </form>
                         )}

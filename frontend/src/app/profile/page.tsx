@@ -16,7 +16,7 @@ export default function ProfilePage() {
 
 function ProfileContent() {
     const { user } = useAuth();
-    const { profile, updateProfile, addEducation, removeEducation, addExperience, removeExperience, addSkill, removeSkill } = useProfile();
+    const { profile, updateProfile, addSkill, removeSkill, removeEducation, removeExperience } = useProfile();
     const [editing, setEditing] = useState(false);
     const [basicInfo, setBasicInfo] = useState({
         name: profile.name || user?.name || '',

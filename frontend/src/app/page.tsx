@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useAuth } from '@/context/AuthContext';
 import { useRoadmap } from '@/context/RoadmapContext';
 import { useCalendar } from '@/context/CalendarContext';
@@ -34,8 +33,8 @@ function LoggedOutHome() {
                     <h1 className={styles.heroTitle}>build, your, future</h1>
                     <p className={styles.heroSubtitle}>Your Roadmap Starts Here</p>
                     <p className={styles.heroDescription}>
-                        Cybersecurity is one of the most in-demand and impactful careers in today's digital world.
-                        Whether you're a student, career shifter, or tech enthusiast, our platform provides clear,
+                        Cybersecurity is one of the most in-demand and impactful careers in today&apos;s digital world.
+                        Whether you&apos;re a student, career shifter, or tech enthusiast, our platform provides clear,
                         step-by-step roadmaps to help you navigate your journey into the field of cybersecurity.
                     </p>
                     <div className={styles.ctaButtons}>
@@ -93,7 +92,7 @@ function LoggedOutHome() {
     );
 }
 
-function LoggedInHome({ user, progress, upcomingTasks }: any) {
+function LoggedInHome({ user, progress, upcomingTasks }: { user: any; progress: number; upcomingTasks: any[] }) {
     const today = new Date();
     const todayTasks = upcomingTasks.filter((task: any) =>
         task.date === today.toISOString().split('T')[0]

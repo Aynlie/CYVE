@@ -109,8 +109,8 @@ function RoadmapContent() {
                                             {step.completed ? '✓ Completed' : 'Mark Complete'}
                                         </button>
                                         <span className={`badge ${step.field === 'red' ? 'badge-red' :
-                                                step.field === 'blue' ? 'badge-blue' :
-                                                    'badge-purple'
+                                            step.field === 'blue' ? 'badge-blue' :
+                                                'badge-purple'
                                             }`}>
                                             {step.field.toUpperCase()}
                                         </span>

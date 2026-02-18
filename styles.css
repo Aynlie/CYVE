@@ -253,17 +253,21 @@ a:hover {
 .team-sections {
   display: flex;
   flex-direction: column;
+  gap: 6rem;
+  padding: 4rem 0;
 }
 
 .team-card {
-  height: 70vh;
-  /* Reduced from 100vh to lessen gaps */
+  min-height: 80vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem 0;
+  padding: 8rem 0;
+  border-radius: 60px;
+  margin: 0 4rem;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
 }
 
 .team-bg {

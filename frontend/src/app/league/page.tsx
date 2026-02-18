@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './league.module.css';
 
@@ -72,12 +72,13 @@ const teams: TeamCard[] = [
 
 export default function LeaguePage() {
     const [currentIndex, setCurrentIndex] = useState(1); // Start with Purple in center
-    const containerRef = useRef<HTMLDivElement>(null);
 
     const handleMouseMove = (e: React.MouseEvent) => {
-        if (!containerRef.current) return;
+        // The containerRef is removed, so we need to get the target element directly
+        const target = e.currentTarget as HTMLDivElement;
+        if (!target) return;
 
-        const { left, width } = containerRef.current.getBoundingClientRect();
+        const { left, width } = target.getBoundingClientRect();
         const mouseX = e.clientX - left;
         const percentage = mouseX / width;
 
@@ -121,6 +122,12 @@ export default function LeaguePage() {
         }
     };
 
+    // Placeholder for handleJoinLeague as it was introduced in the snippet
+    const handleJoinLeague = (id: string) => {
+        console.log(`Joining league: ${id}`);
+        // Implement actual navigation or action here
+    };
+
     return (
         <div className={styles.page}>
             {/* Cybersecurity dotted pattern background */}
@@ -134,7 +141,6 @@ export default function LeaguePage() {
 
                 <div
                     className={styles.cardsWrapper}
-                    ref={containerRef}
                     onMouseMove={handleMouseMove}
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
@@ -196,8 +202,8 @@ export default function LeaguePage() {
                                             </ul>
                                         </div>
 
-                                        <Link
-                                            href={team.link}
+                                        <button
+                                            onClick={() => handleJoinLeague(team.id)}
                                             className={styles.exploreBtn}
                                             style={{
                                                 borderColor: team.color,
@@ -205,7 +211,7 @@ export default function LeaguePage() {
                                             }}
                                         >
                                             Explore {team.name} →
-                                        </Link>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    const signup = async (email: string, password: string, name: string): Promise<boolean> => {
+    const signup = async (name: string, email: string, password: string): Promise<boolean> => {
         try {
             // Simulate API call - in production, this would call your backend
             const storedUsers = JSON.parse(localStorage.getItem('cyve_users') || '[]');
